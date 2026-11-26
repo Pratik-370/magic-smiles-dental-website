@@ -1,0 +1,61 @@
+# Dependencies & build output
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+
+# OS & editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Visual reference screenshots (contain Getty/concept slide renders requiring permission review)
+docs/source-reference/
+
+# ==============================================================================
+# Protected Original Assets Requiring Permission / Reuse Review (33 Files)
+# Kept locally in public/assets/ for reference; excluded from Git/GitHub until
+# licensing/reuse clearance is confirmed (see docs/asset-coverage-report.md).
+# ==============================================================================
+
+# 1. GoDaddy-bundled Getty Images (28 assets)
+public/assets/home/hero/hero-children-smiling-circle.jpg
+public/assets/home/priority-gallery/priority-01.jpg
+public/assets/home/priority-gallery/priority-02.jpg
+public/assets/home/priority-gallery/priority-03.jpg
+public/assets/home/priority-gallery/priority-04.jpg
+public/assets/home/priority-gallery/priority-05.jpg
+public/assets/home/priority-gallery/priority-06.jpg
+public/assets/home/services-cards/home-service-general-preventive.jpg
+public/assets/home/services-cards/home-service-orthodontics.jpg
+public/assets/home/services-cards/home-service-dental-implants.jpg
+public/assets/home/services-cards/home-service-sedation-dentistry.jpg
+public/assets/home/services-cards/home-service-tooth-extractions.jpg
+public/assets/home/experience-magic-family.jpg
+public/assets/services/services-general-preventive.jpg
+public/assets/services/services-orthodontics.jpg
+public/assets/services/services-implants-restoration.jpg
+public/assets/services/services-sedation-dentistry.jpg
+public/assets/services/services-pediatric-dentistry.jpg
+public/assets/services/services-contact-child-exam.jpg
+public/assets/about/about-expert-dental-care.jpg
+public/assets/about/about-our-technology.jpg
+public/assets/about/about-our-community.jpg
+public/assets/about/provider-comprehensive-services.jpg
+public/assets/about/provider-state-of-the-art-tech.jpg
+public/assets/about/provider-friendly-staff.jpg
+public/assets/about/provider-flexible-scheduling.jpg
+public/assets/about/provider-affordable-care.jpg
+public/assets/about/provider-patient-education.jpg
+
+# 2. Themed Dentistry Concept Slides with Moodboard / Third-Party Comparables (5 assets)
+public/assets/home/themed-story/story-01-magic-smiles-banner.png
+public/assets/home/themed-story/story-02-welcome-faraway-land.jpg
+public/assets/home/themed-story/story-03-billy-and-moe.jpg
+public/assets/home/themed-story/story-04-gummy-the-gum-goblin.jpg
+public/assets/home/themed-story/story-05-quest-characters.jpg
