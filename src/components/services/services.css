@@ -1,0 +1,734 @@
+/* Our Services Page — Treatment Discovery Experience */
+
+/* -------------------------------------------------------------------------- */
+/* 1. Services Hero                                                           */
+/* -------------------------------------------------------------------------- */
+
+.services-hero {
+  padding: clamp(2.25rem, 4.5vw, 4rem) 0 clamp(2rem, 4vw, 3.25rem);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(91, 24, 114, 0.06), transparent 44%),
+    radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.08), transparent 40%),
+    var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.services-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(2rem, 4vw, 3.75rem);
+  align-items: center;
+}
+
+.services-hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.services-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.42rem 0.9rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary-soft);
+  border: 1px solid var(--color-primary-tint);
+  color: var(--color-primary);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.services-hero__eyebrow::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-accent-strong);
+}
+
+.services-hero__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 4.3vw, 3.45rem);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+.services-hero__subtitle {
+  margin: 0;
+  font-size: clamp(1.05rem, 1.45vw, 1.2rem);
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  max-width: 46ch;
+}
+
+.services-hero__meta {
+  margin: 0;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-primary-strong);
+}
+
+.services-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.services-hero__phone-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.78rem 1.35rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border-strong, #d4cadf);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-decoration: none;
+  transition: border-color 160ms ease, background-color 160ms ease, color 160ms ease;
+}
+
+.services-hero__phone-link:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-soft);
+  color: var(--color-primary-strong);
+}
+
+.services-hero__media {
+  position: relative;
+}
+
+.services-hero__frame {
+  border-radius: 26px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border: 1px solid rgba(91, 24, 114, 0.14);
+  background: var(--color-parchment);
+  box-shadow: 0 26px 56px -26px rgba(47, 11, 61, 0.26);
+}
+
+.services-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+  display: block;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 2. Sticky Service Directory Jump Bar                                       */
+/* -------------------------------------------------------------------------- */
+
+.services-directory {
+  position: sticky;
+  top: 4.75rem;
+  z-index: 25;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.7rem 0;
+}
+
+.services-directory__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.services-directory__label {
+  flex-shrink: 0;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+.services-directory__list {
+  list-style: none;
+  margin: 0;
+  padding: 0.15rem 0;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.services-directory__item {
+  flex-shrink: 0;
+}
+
+.services-directory__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+
+.services-directory__link:hover {
+  background: var(--color-primary-soft);
+  border-color: var(--color-primary);
+  color: var(--color-primary-strong);
+}
+
+.services-directory__num {
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 3. Service Bands & Anchor Offset                                           */
+/* -------------------------------------------------------------------------- */
+
+.services-band {
+  padding: clamp(3rem, 5.5vw, 4.75rem) 0;
+}
+
+.services-band--subtle {
+  background: var(--color-bg-subtle);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.services-band--ivory {
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.services-band--parchment {
+  background: var(--color-parchment);
+  border-bottom: 1px solid #e5dacb;
+}
+
+.services-band--plum {
+  background:
+    radial-gradient(circle at 86% 16%, rgba(245, 158, 11, 0.15), transparent 42%),
+    linear-gradient(155deg, var(--color-primary-deep) 0%, #1d0728 100%);
+  color: var(--color-text-inverse);
+}
+
+.service-anchor-target {
+  scroll-margin-top: 9rem;
+}
+
+/* Common text anatomy inside service sections */
+.service-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.service-num-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.service-category-label {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.service-title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.55rem, 2.5vw, 2.1rem);
+  line-height: 1.18;
+  color: var(--color-text);
+}
+
+.service-copy {
+  margin: 0;
+  font-size: var(--text-base);
+  line-height: 1.72;
+  color: var(--color-text-muted);
+}
+
+.service-copy strong {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.service-highlights {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.service-highlight-pill {
+  padding: 0.35rem 0.78rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary-soft);
+  border: 1px solid var(--color-primary-tint);
+  color: var(--color-primary-strong);
+  font-size: var(--text-xs);
+  font-weight: 600;
+}
+
+/* Layout Variant A: Featured Split (01 General & Preventive) */
+.service-feature-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  padding: clamp(1.5rem, 3.2vw, 2.5rem);
+  border-radius: 26px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 22px 48px -28px rgba(47, 11, 61, 0.2);
+  align-items: center;
+}
+
+.service-feature-split__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.service-feature-split__media {
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: var(--color-parchment);
+}
+
+.service-feature-split__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Layout Variant B: Paired Showcase Grid (02 Orthodontics & 03 Implants) */
+.service-pair-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.25rem);
+  align-items: stretch;
+}
+
+.service-pair-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 18px 40px -28px rgba(47, 11, 61, 0.18);
+}
+
+.service-pair-card__media {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--color-parchment);
+}
+
+.service-pair-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.service-pair-card__body {
+  flex: 1;
+  padding: clamp(1.35rem, 2.6vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.service-pair-card__actions {
+  margin-top: auto;
+  padding-top: var(--space-1);
+}
+
+/* Layout Variant C: Staggered Editorial Rows (04 Sedation & 05 Pediatric) */
+.service-editorial-stack {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.75rem, 3.5vw, 2.75rem);
+}
+
+.service-editorial-row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: clamp(1.5rem, 3.5vw, 3rem);
+  padding: clamp(1.35rem, 3vw, 2.25rem);
+  border-radius: 24px;
+  background: var(--color-surface);
+  border: 1px solid #e3d6c4;
+  box-shadow: 0 20px 42px -28px rgba(47, 11, 61, 0.16);
+  align-items: center;
+}
+
+.service-editorial-row--reverse {
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+}
+
+.service-editorial-row--reverse .service-editorial-row__media {
+  order: 2;
+}
+
+.service-editorial-row__media {
+  border-radius: 18px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: var(--color-parchment);
+}
+
+.service-editorial-row__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.service-editorial-row__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+/* -------------------------------------------------------------------------- */
+/* 4. Community Outreach Feature (06 Mobile Dental Outreach Programs)         */
+/* -------------------------------------------------------------------------- */
+
+.outreach-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+.outreach-showcase__media {
+  border-radius: 24px;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: #14061c;
+  box-shadow: 0 28px 60px -24px rgba(0, 0, 0, 0.58);
+}
+
+.outreach-showcase__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Frames only the DOC Dental On Call RV from the tall iOS screenshot */
+  object-position: 50% 44%;
+  display: block;
+}
+
+.outreach-showcase__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.outreach-showcase .service-num-badge {
+  background: var(--color-accent);
+  color: var(--color-bg-dark);
+}
+
+.outreach-showcase .service-category-label {
+  color: var(--color-accent);
+}
+
+.outreach-showcase__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.65rem, 2.7vw, 2.3rem);
+  line-height: 1.16;
+  color: var(--color-text-inverse);
+}
+
+.outreach-showcase__copy {
+  margin: 0;
+  font-size: var(--text-base);
+  line-height: 1.72;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.outreach-showcase__copy strong {
+  color: var(--color-text-inverse);
+  font-weight: 700;
+}
+
+.outreach-showcase__pillars {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.outreach-showcase__pillar {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.outreach-showcase__pillar::before {
+  content: '•';
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 5. Bottom Visit Us Today! & Expandable Note Band                           */
+/* -------------------------------------------------------------------------- */
+
+.services-contact-section {
+  padding: clamp(3rem, 5.5vw, 4.75rem) 0;
+  background: var(--color-bg);
+}
+
+.services-contact-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+  gap: clamp(1.75rem, 4vw, 3.25rem);
+  padding: clamp(1.75rem, 4vw, 3rem);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 92% 16%, rgba(245, 158, 11, 0.16), transparent 44%),
+    linear-gradient(135deg, var(--color-primary-deep) 0%, var(--color-primary) 100%);
+  color: var(--color-text-inverse);
+  box-shadow: 0 28px 60px -28px rgba(47, 11, 61, 0.45);
+  align-items: start;
+}
+
+.services-contact-card__eyebrow {
+  display: inline-block;
+  margin-bottom: var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.services-contact-card__title {
+  margin: 0 0 var(--space-3);
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3vw, 2.45rem);
+  line-height: 1.14;
+  color: var(--color-text-inverse);
+}
+
+.services-contact-card__desc {
+  margin: 0 0 var(--space-5);
+  font-size: var(--text-base);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 44ch;
+}
+
+.services-contact-card__info {
+  padding: 1.25rem 1.4rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.services-contact-card__biz {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  color: var(--color-text-inverse);
+}
+
+.services-contact-card__addr {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.services-contact-card__phone {
+  align-self: flex-start;
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.services-contact-card__phone:hover {
+  text-decoration: underline;
+}
+
+.services-note__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.services-note__panel {
+  margin-top: var(--space-4);
+  padding: 1.4rem;
+  border-radius: 20px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 18px 40px -22px rgba(17, 14, 23, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.services-note__panel-title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  color: var(--color-primary-strong);
+}
+
+.services-note__fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.services-note__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.services-note__field--full {
+  grid-column: span 2;
+}
+
+.services-note__field label {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.services-note__field input,
+.services-note__field textarea {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid var(--color-border-strong, #c9bfd6);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: var(--text-sm);
+}
+
+.services-note__notice {
+  margin: 0;
+  padding: 0.7rem 0.9rem;
+  border-radius: 10px;
+  font-size: var(--text-xs);
+  line-height: 1.5;
+}
+
+.services-note__notice--error {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.services-note__notice--info {
+  background: var(--color-primary-soft);
+  color: var(--color-primary-strong);
+  border: 1px solid var(--color-primary-tint);
+}
+
+.services-note__legal {
+  margin: 0;
+  font-size: 0.74rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+.services-note__form-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* -------------------------------------------------------------------------- */
+/* 6. Responsive Breakpoints                                                  */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 960px) {
+  .services-hero__grid,
+  .service-feature-split,
+  .service-pair-grid,
+  .service-editorial-row,
+  .service-editorial-row--reverse,
+  .outreach-showcase,
+  .services-contact-card {
+    grid-template-columns: 1fr;
+  }
+
+  .service-editorial-row--reverse .service-editorial-row__media {
+    order: 0;
+  }
+
+  .services-directory {
+    top: 4.75rem;
+  }
+
+  .service-anchor-target {
+    scroll-margin-top: 9rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .services-note__fields {
+    grid-template-columns: 1fr;
+  }
+
+  .services-note__field--full {
+    grid-column: span 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services-hero__phone-link,
+  .services-directory__link {
+    transition: none;
+  }
+}

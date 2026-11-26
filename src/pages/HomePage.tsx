@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Button } from '../components/common/Button';
 import { SectionHeading } from '../components/common/SectionHeading';
 import { HomeContactCta } from '../components/home/HomeContactCta';
@@ -15,6 +16,17 @@ import {
 import '../components/home/home.css';
 
 export function HomePage() {
+  useEffect(() => {
+    document.title = 'Magic Smiles Dental and Orthodontics';
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) {
+      meta.setAttribute(
+        'content',
+        'Discover top-notch dental services for your family\'s oral health at Magic Smiles Dental and Ortho. Book your appointment today!'
+      );
+    }
+  }, []);
+
   return (
     <div className="home-page">
       {/* 1. Editorial Asymmetric Hero */}

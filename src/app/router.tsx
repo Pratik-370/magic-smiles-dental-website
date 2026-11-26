@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import { SiteLayout } from '../components/layout/SiteLayout';
 import { HomePage } from '../pages/HomePage';
 import { RoutePlaceholder } from '../pages/RoutePlaceholder';
+import { ServicesPage } from '../pages/ServicesPage';
 
 export const router = createBrowserRouter([
   {
@@ -13,13 +14,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/our-services',
-        element: (
-          <RoutePlaceholder
-            title="Our Services"
-            routePath="/our-services"
-            description="Temporary placeholder for the Our Services page. Scheduled for the next implementation stage."
-          />
-        ),
+        element: <ServicesPage />,
       },
       {
         path: '/about-us',
