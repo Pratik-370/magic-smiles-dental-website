@@ -56,9 +56,28 @@
 
 ---
 
-## 4. Verification Summary
+## 4. Detailed About Us (`/about-us`) Placement Map
+
+| # | Original `/about-us` Heading | Verbatim Source Content Preserved | Destination Section ID | Original Asset | Homepage Preview Relationship |
+|---|---|---|---|---|---|
+| Masthead | `About Magic Smiles Dental` | `"About Magic Smiles Dental"` `h1` + `"Highly Trained Dental Professionals"` practice introduction (`"Your oral health is essential to your overall well-being..."`) + Bakersfield hours/location/phone/payment facts | `/about-us` (`#about-hero-heading`) | Text + Practice Fact Panel (links to `/contact` & `/our-services`) | Targets `"Discover About Us"` CTA from `/` |
+| Story 01 | `Expert Dental Care` | `"At Magic Smiles Dental and Orthodontics, we believe that dental care should be comfortable, convenient, and affordable..."` | `/about-us` (`#expert-dental-care`) | `/assets/about/about-expert-dental-care.jpg` | Expanded full story behind Home intro |
+| Story 02 | `Our Technology` | `"We use the latest technologies and techniques to ensure that our patients receive the best possible care. From digital x-rays to 3D imaging..."` | `/about-us` (`#our-technology`) | `/assets/about/about-our-technology.jpg` | Exclusive to `/about-us` |
+| Story 03 | `Our Community` | `"We are proud to be a part of the Magic Smiles Dental community, and we are committed to giving back in any way we can..."` | `/about-us` (`#our-community`) | `/assets/about/about-our-community.jpg` | Links cleanly to `/our-services#mobile-dental-outreach-programs` & `/contact` |
+| Pillar 01 | `Comprehensive Dental Services` | `"We offer a wide range of dental services including general dentistry, cosmetic dentistry, and orthodontic treatments..."` | `/about-us` (`#comprehensive-services`) | `/assets/about/provider-comprehensive-services.jpg` | Top 2-col row in `Magic Smiles Dental - Your Trusted Dental Care Provider` |
+| Pillar 02 | `State-of-the-Art Technology` | `"At Magic Smiles Dental, we use the latest technology to provide you with the most accurate diagnosis..."` | `/about-us` (`#state-of-the-art-tech`) | `/assets/about/provider-state-of-the-art-tech.jpg` | Top 2-col row in Trusted Provider section |
+| Pillar 03 | `Friendly and Experienced Staff` | `"Our team of dental professionals is committed to making your visit to our office a positive and enjoyable experience..."` | `/about-us` (`#friendly-staff`) | `/assets/about/provider-friendly-staff.jpg` | Full-width spotlight row in Trusted Provider section |
+| Pillar 04 | `Convenient and Flexible Scheduling` | `"We understand that your time is valuable, which is why we offer flexible scheduling options..."` | `/about-us` (`#flexible-scheduling`) | `/assets/about/provider-flexible-scheduling.jpg` | Bottom 3-col row in Trusted Provider section |
+| Pillar 05 | `Affordable Dental Care` | `"At Magic Smiles Dental, we believe that everyone deserves access to high-quality dental care..."` | `/about-us` (`#affordable-care`) | `/assets/about/provider-affordable-care.jpg` | Bottom 3-col row in Trusted Provider section |
+| Pillar 06 | `Patient Education and Prevention` | `"We believe that education and prevention are the keys to maintaining good oral health..."` | `/about-us` (`#patient-education`) | `/assets/about/provider-patient-education.jpg` | Bottom 3-col row in Trusted Provider section |
+| Closing CTA | `Visit Us Today!` | Practice welcome closing prompt + links to `/contact` (`Book Your Appointment`) & `/our-services` (`Our Services`) | `/about-us` (`#about-closing-heading`) | Deep-plum CTA band | Shared navigation loop |
+
+---
+
+## 5. Verification Summary
 
 - **Homepage (`/`):** Features 7 focused, non-repetitive sections: Hero, Practice Intro & Why Choose, Curated 3-Service Preview, *Your Smile, Our Priority* Mosaic Gallery, *The Fun Zone for Little Smiles* Showcase, Interactive 5-Chapter Themed Story, and Compact Appointment/Location CTA.
 - **Our Services (`/our-services`):** Features Hero, Sticky Treatment & Outreach Directory, Asymmetric Feature Split (`01`), Paired Showcase Grid (`02`–`03`), Staggered Editorial Showcase (`04`–`05`), Deep-Plum Community Outreach Showcase (`06`), and Compact Contact/Note CTA Band.
+- **About Us (`/about-us`):** Features Editorial Practice Masthead, Founding Practice Story (`Expert Dental Care`, `Our Technology`), Deep Plum Community Spotlight (`Our Community`), Asymmetric `2 + 1 + 3` *Your Trusted Dental Care Provider* Showcase (all 6 pillars & photos), and Closing Appointment CTA Band.
 - **Zero Orphaned Assets or Copy:** Every one of the 51 original assets and every paragraph from `docs/content-inventory.md` maps cleanly to `/`, `/our-services`, `/about-us`, `/contact`, or `*`.
 - **Source Discrepancies Preserved:** `"Sedation Dentistry"` cosmetic copy, `/our-services` `93307` ZIP discrepancy, `2025` copyright year, and `+92` JSON-LD phone typo remain untouched pending business-owner approval.
