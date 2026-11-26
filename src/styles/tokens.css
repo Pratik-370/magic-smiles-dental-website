@@ -1,0 +1,97 @@
+/*
+ * Centralized Design Tokens — Magic Smiles Dental & Orthodontics
+ *
+ * Clearly distinguishes:
+ *   1. Observed source tokens extracted from magicsmilesdentalandortho.com
+ *   2. Provisional redesign tokens proposed in docs/design-direction.md
+ *      (subject to user approval before visual implementation)
+ */
+
+:root {
+  /* === 1. Observed Source Brand Tokens === */
+  --source-purple: #800080;
+  --source-purple-hover: #a800a8;
+  --source-dark: #161616;
+  --source-black: #000000;
+  --source-surface: #f6f6f6;
+  --source-white: #ffffff;
+  --source-h1-size: 2.4375rem; /* 39px computed */
+
+  /* === 2. Provisional Redesign Palette (Pending Approval) === */
+  --color-primary: #5b1872;          /* PROVISIONAL: higher-contrast royal plum */
+  --color-primary-strong: #461159;   /* PROVISIONAL: hover / pressed plum */
+  --color-primary-vivid: var(--source-purple);
+  --color-primary-soft: #f9f5ff;     /* PROVISIONAL: subtle lavender surface */
+  --color-primary-tint: #e9d5ff;     /* PROVISIONAL: accessible link on dark footer */
+
+  --color-accent: #f59e0b;           /* PROVISIONAL: warm castle gold accent */
+  --color-accent-strong: #d97706;
+
+  /* === Neutrals, Backgrounds & Text === */
+  --color-bg: #ffffff;
+  --color-bg-subtle: #f8fafc;
+  --color-bg-muted: var(--source-surface);
+  --color-bg-dark: #110e17;          /* PROVISIONAL: deep plum-charcoal dark surface */
+
+  --color-surface: #ffffff;
+  --color-border: #e2e8f0;
+
+  --color-text: #1e1b2e;
+  --color-text-muted: #4b5563;
+  --color-text-inverse: #ffffff;
+
+  /* === Typography === */
+  --font-heading: 'Raleway', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.5rem;
+
+  /* === Spacing Scale === */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* === Radii === */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  /* === Shadows === */
+  --shadow-sm: 0 1px 2px rgba(17, 14, 23, 0.06);
+  --shadow-md: 0 4px 12px rgba(17, 14, 23, 0.08);
+  --shadow-lg: 0 12px 28px rgba(17, 14, 23, 0.12);
+
+  /* === Layout & Responsive Breakpoints ===
+   * Reference breakpoints for media queries:
+   *   sm: 640px | md: 768px | lg: 1024px | xl: 1280px
+   */
+  --container-max: 1200px;
+  --container-narrow: 960px;
+  --container-gutter: 1.25rem;
+
+  --bp-sm: 640px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+}

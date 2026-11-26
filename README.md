@@ -2,39 +2,106 @@
 
 **Business:** Magic Smiles Dental & Orthodontics (`2935 Oswell St, Bakersfield, CA 93306`)  
 **Source Website:** https://magicsmilesdentalandortho.com/  
-**Planned Frontend Stack:** React + Vite + TypeScript  
+**GitHub Repository:** https://github.com/Pratik-370/magic-smiles-dental-website (Private)  
 
 ---
 
 ## Project Objective
 
-Reconstruct the existing Magic Smiles Dental & Orthodontics website into a modern, responsive, high-contrast React + Vite + TypeScript web application while preserving all real business information, verbatim service/practice content, and original clinic imagery.
+Reconstruct the Magic Smiles Dental & Orthodontics website into a modern, responsive, accessible React + Vite + TypeScript web application while preserving all real business details, verbatim original content, and verified clinic imagery.
 
 ## Current Project Status
 
-- **Phase 1 (Complete):** Full source website discovery, verbatim content extraction, original asset collection & verification (`51/51` assets locally verified), visual reference capture, and design/architecture planning.
-- **Phase 2 (Current):** Git & GitHub repository baseline initialization, with unapproved/review-required third-party assets protected via `.gitignore`.
-- **Phase 3 (Pending Approval):** React + Vite + TypeScript application scaffolding and UI implementation. **The React application has not yet been initialized.**
+- **Phase 1 (Complete):** Full source website audit, verbatim content extraction, original asset collection (`51/51` verified locally), reference screenshots, and design direction.
+- **Phase 2 (Complete):** Git repository initialization on `main`, private GitHub repository creation, and `.gitignore` protection for review-required assets.
+- **Phase 3 (Current):** Minimal **React + Vite + TypeScript** application foundation initialized (routing, temporary route placeholders, centralized tokens, local Raleway font configuration, and global base styles).
+- **Phase 4 (Pending Approval):** Full website pages (`Home`, `Our Services`, `About Us`, `Contact`, `Not Found`) have **not yet been implemented**.
 
 ---
 
-## Repository Structure
+## Technology Stack
 
-### `docs/` — Audit, Content & Asset Documentation
-- `docs/source-audit.md` — Discovered pages, URL inventory, HTTP statuses, section structures, and interactive features.
-- `docs/content-inventory.md` — Verbatim page-by-page copy, metadata, forms, and embedded story slide transcripts.
-- `docs/asset-manifest.md` — Technical catalog of all 51 collected original assets (dimensions, formats, hashes, licensing notes).
-- `docs/asset-coverage-report.md` — Page-and-section asset mapping (`100.0%` local verification coverage) and reuse review flags.
-- `docs/design-direction.md` — Observed source characteristics, proposed UI/UX direction, tool evaluation, and implementation roadmap.
-- `docs/source-reference/` *(excluded from Git)* — Local desktop (`1440x900`) and mobile (`390x844`) reference screenshots of the source site.
+- **Framework:** React + TypeScript
+- **Build Tool:** Vite
+- **Routing:** React Router (`react-router-dom`)
+- **Styling:** Standard CSS with centralized CSS custom properties (`src/styles/tokens.css`, `src/styles/fonts.css`, `src/styles/global.css`)
 
-### `public/assets/` — Verified Local Asset Library (51 Assets Locally)
-- **Tracked in Git (18 cleared assets):**
-  - `public/assets/brand/` — Clinic logo, favicon, and castle emblem (`3` files).
-  - `public/assets/fonts/` — Self-hosted `Raleway v37` `.woff2` subsets (`5` files, SIL OFL 1.1).
-  - `public/assets/home/fun-zone-gallery/` — Original clinic interior & kids waiting area photos (`9` files).
-  - `public/assets/services/mobile-dental-outreach-bus.jpg` — Mobile dental outreach RV photo (`1` file).
-- **Protected Locally via `.gitignore` (33 review-required assets):**
-  - `28` GoDaddy-bundled Getty Images across `public/assets/home/`, `public/assets/services/`, and `public/assets/about/`.
-  - `5` themed-dentistry concept slides (`public/assets/home/themed-story/`) containing moodboard imagery and third-party `"COMPARABLES"` thumbnails.
-  - All 33 excluded files remain intact locally for reference and will only be staged or replaced once reuse clearance is confirmed.
+## Prerequisites
+
+- **Node.js:** `>= 22.12.0` (verified on `v24.20.0`)
+- **npm:** Verified on `11.19.0`
+
+## Installation & Commands
+
+Install dependencies from the project root:
+
+```bash
+npm install
+```
+
+Start the Vite development server:
+
+```bash
+npm run dev
+```
+
+Create a TypeScript-checked production build:
+
+```bash
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+---
+
+## Project Structure
+
+```text
+Magic Smiles Dental & Orthodontics/
+├── public/
+│   └── assets/                         # 51 verified local assets (18 cleared in Git, 33 protected via .gitignore)
+│       ├── brand/                      # Clinic logo, favicon, and castle emblem
+│       ├── fonts/                      # 5 local Raleway v37 WOFF2 subsets
+│       ├── home/                       # Fun Zone gallery (tracked) + Hero/Priority/Services/Story (ignored)
+│       ├── services/                   # DOC outreach bus (tracked) + Getty service photos (ignored)
+│       └── about/                      # Getty about/provider photos (ignored)
+├── src/
+│   ├── app/
+│   │   ├── App.tsx                     # Root RouterProvider shell
+│   │   └── router.tsx                  # Discovered routes (/, /our-services, /about-us, /contact, *)
+│   ├── pages/
+│   │   └── RoutePlaceholder.tsx        # Temporary placeholder component for unimplemented routes
+│   ├── styles/
+│   │   ├── fonts.css                   # Local @font-face declarations for Raleway v37
+│   │   ├── tokens.css                  # Observed source tokens + provisional redesign CSS variables
+│   │   └── global.css                  # Base resets, accessibility, and placeholder styles
+│   ├── main.tsx                        # Application entry point
+│   └── vite-env.d.ts                   # Vite TypeScript client types
+├── docs/
+│   ├── source-audit.md                 # Page discovery, URL status, section structure, and interactive audit
+│   ├── content-inventory.md            # Verbatim copy extracted page by page
+│   ├── asset-manifest.md               # Technical catalog of all 51 local assets
+│   ├── asset-coverage-report.md        # Page/section asset coverage mapping & reuse review flags
+│   ├── design-direction.md             # Observed source styling, proposed direction, and execution plan
+│   └── source-reference/               # (Git-ignored) Source website screenshots (1440x900 & 390x844)
+├── index.html
+├── package.json
+├── package-lock.json
+├── tsconfig.json
+├── vite.config.ts
+├── .gitignore
+└── README.md
+```
+
+---
+
+## Documentation & Local Asset Notes
+
+- **`docs/`:** Contains the complete source audit, verbatim content inventory, asset manifest, asset coverage report, and design direction.
+- **`public/assets/`:** All `51` collected original assets remain intact locally inside `public/assets/` and are served from `/assets/...`.
+- **Protected Assets:** `33` assets requiring permission/reuse review (`28` GoDaddy-bundled Getty Images + `5` themed-dentistry concept slides) and `docs/source-reference/` remain excluded from Git/GitHub via `.gitignore`.
