@@ -19,14 +19,15 @@ export function ThemedStoryViewer() {
 
   return (
     <section
-      className="home-section home-section--muted"
+      className="home-section home-section--parchment"
       aria-labelledby="themed-story-heading"
     >
       <div className="site-container">
         <SectionHeading
           id="themed-story-heading"
-          eyebrow={THEMED_STORY.sectionLabel}
-          title="Magic Smiles — Where Every Visit Is a New Adventure"
+          eyebrow={THEMED_STORY.eyebrow}
+          title={THEMED_STORY.heading}
+          align="left"
         />
 
         <div
@@ -49,7 +50,8 @@ export function ThemedStoryViewer() {
                   }`}
                   onClick={() => setSlideIndex(idx)}
                 >
-                  {slide.stepLabel}
+                  <span className="story-viewer__tab-num">{slide.stepNumber}</span>
+                  <span>{slide.stepLabel}</span>
                 </button>
               );
             })}
