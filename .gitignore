@@ -14,8 +14,9 @@ dist-ssr/
 Thumbs.db
 desktop.ini
 
-# Visual reference screenshots (contain Getty/concept slide renders requiring permission review)
+# Visual reference & local QA screenshots (contain Getty/concept slide renders requiring permission review)
 docs/source-reference/
+docs/qa-evidence/
 
 # ==============================================================================
 # Protected Original Assets Requiring Permission / Reuse Review (33 Files)

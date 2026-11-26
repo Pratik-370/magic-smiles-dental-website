@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { NAV_ITEMS, SITE_INFO } from '../../data/site';
 import { Button } from '../common/Button';
@@ -10,8 +10,11 @@ interface MobileNavigationProps {
 }
 
 export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
     if (!isOpen) return;
+    closeButtonRef.current?.focus();
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         onClose();
@@ -41,6 +44,7 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
         <div className="mobile-nav-drawer__top">
           <span className="mobile-nav-drawer__title">{SITE_INFO.shortBusinessName}</span>
           <button
+            ref={closeButtonRef}
             type="button"
             className="mobile-nav-drawer__close"
             onClick={onClose}

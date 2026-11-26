@@ -3,7 +3,7 @@ import { SiteLayout } from '../components/layout/SiteLayout';
 import { AboutPage } from '../pages/AboutPage';
 import { ContactPage } from '../pages/ContactPage';
 import { HomePage } from '../pages/HomePage';
-import { RoutePlaceholder } from '../pages/RoutePlaceholder';
+import { NotFoundPage } from '../pages/NotFoundPage';
 import { ServicesPage } from '../pages/ServicesPage';
 
 export const router = createBrowserRouter([
@@ -28,14 +28,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '*',
-        element: (
-          <RoutePlaceholder
-            title="Page Not Found"
-            routePath="*"
-            description="We can’t seem to find the page you’re looking for."
-            isNotFound
-          />
-        ),
+        element: <NotFoundPage />,
       },
     ],
   },

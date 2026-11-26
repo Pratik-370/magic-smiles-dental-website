@@ -36,15 +36,30 @@ export function ThemedStoryViewer() {
           aria-roledescription="story viewer"
           aria-label="Magic Smiles themed dentistry story"
         >
-          <div className="story-viewer__tabs" role="tablist" aria-label="Story chapters">
+          <div
+            className="story-viewer__tabs"
+            role="tablist"
+            aria-label="Story chapters"
+            onKeyDown={(event) => {
+              if (event.key === 'ArrowLeft') {
+                event.preventDefault();
+                handlePrev();
+              } else if (event.key === 'ArrowRight') {
+                event.preventDefault();
+                handleNext();
+              }
+            }}
+          >
             {slides.map((slide, idx) => {
               const isSelected = idx === slideIndex;
               return (
                 <button
                   key={slide.id}
+                  id={`story-tab-${slide.id}`}
                   type="button"
                   role="tab"
                   aria-selected={isSelected}
+                  aria-controls={`story-panel-${slide.id}`}
                   className={`story-viewer__tab${
                     isSelected ? ' story-viewer__tab--active' : ''
                   }`}
@@ -57,7 +72,13 @@ export function ThemedStoryViewer() {
             })}
           </div>
 
-          <div className="story-viewer__panel" role="tabpanel" aria-live="polite">
+          <div
+            id={`story-panel-${current.id}`}
+            className="story-viewer__panel"
+            role="tabpanel"
+            aria-labelledby={`story-tab-${current.id}`}
+            aria-live="polite"
+          >
             <div className="story-viewer__media">
               <img
                 src={current.imageSrc}
