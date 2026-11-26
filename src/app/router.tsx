@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { SiteLayout } from '../components/layout/SiteLayout';
 import { AboutPage } from '../pages/AboutPage';
+import { ContactPage } from '../pages/ContactPage';
 import { HomePage } from '../pages/HomePage';
 import { RoutePlaceholder } from '../pages/RoutePlaceholder';
 import { ServicesPage } from '../pages/ServicesPage';
@@ -23,13 +24,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/contact',
-        element: (
-          <RoutePlaceholder
-            title="Contact Us"
-            routePath="/contact"
-            description="Temporary placeholder for the Contact page. Scheduled for the next implementation stage."
-          />
-        ),
+        element: <ContactPage />,
       },
       {
         path: '*',

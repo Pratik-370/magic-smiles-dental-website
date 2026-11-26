@@ -74,10 +74,22 @@
 
 ---
 
-## 5. Verification Summary
+## 5. Detailed Contact (`/contact`) Placement Map
+
+| # | Original `/contact` Element | Verbatim Source Content Preserved | Destination Section ID | Assets / Map | Homepage Preview Relationship | Unresolved Notes |
+|---|---|---|---|---|---|---|
+| Hero & Direct Call | `Contact Us` (`h1`), `Schedule your appointment today!` | `"Contact Us"`, `"Schedule your appointment today!"`, both verbatim introductory paragraphs, direct `tel:6615162904` (`661-516-2904`), `Office hours Mon-Sat: 9:00AM - 6:00PM`, `2935 Oswell St, Bakersfield, CA 93306, USA` | `/contact` (`#contact-hero-heading`) | Global branding only (no page-specific photos on `/contact`) | Targets Hero/Header/Footer/About/Services `"Book Your Appointment"` & `"Contact Us"` CTAs | None |
+| Form | `Send us message!` | Heading `"Send us message!"`, fields `Name`, `Email*`, `Message`, button `Send`, reCAPTCHA Privacy & Terms links; client-side validation + honest backend-unconnected notice | `/contact` (`#contact-form-section`) | None | Moved off `/` onto `/contact` (reduces homepage clutter) | Live backend delivery not yet connected |
+| Clinic Details | `Magic Smiles Dental & Orthodontics` | Phone `661-516-2904` (`tel:6615162904`), `2935 Oswell St, Bakersfield, CA 93306, USA`, hours, `Medi-Cal, PPO insurance, and cash payments`, `"Get directions"` external link | `/contact` (`#contact-info-heading`) | None | Expanded from Home's compact `Visit Us Today!` CTA band | Home/Contact say `93306`; Services says `93307` (owner review) |
+| Map | Embedded Google Map + `Get directions` | `35.3999541, -118.9496722` responsive Google Maps iframe + external `"Get directions"` button | `/contact` (`#contact-map-heading`) | Google Maps iframe embed (`35.3999541, -118.9496722`) | Moved off `/` onto `/contact` | Sandbox/offline environments require network access for live map tiles |
+
+---
+
+## 6. Verification Summary
 
 - **Homepage (`/`):** Features 7 focused, non-repetitive sections: Hero, Practice Intro & Why Choose, Curated 3-Service Preview, *Your Smile, Our Priority* Mosaic Gallery, *The Fun Zone for Little Smiles* Showcase, Interactive 5-Chapter Themed Story, and Compact Appointment/Location CTA.
 - **Our Services (`/our-services`):** Features Hero, Sticky Treatment & Outreach Directory, Asymmetric Feature Split (`01`), Paired Showcase Grid (`02`–`03`), Staggered Editorial Showcase (`04`–`05`), Deep-Plum Community Outreach Showcase (`06`), and Compact Contact/Note CTA Band.
 - **About Us (`/about-us`):** Features Editorial Practice Masthead, Founding Practice Story (`Expert Dental Care`, `Our Technology`), Deep Plum Community Spotlight (`Our Community`), Asymmetric `2 + 1 + 3` *Your Trusted Dental Care Provider* Showcase (all 6 pillars & photos), and Closing Appointment CTA Band.
+- **Contact (`/contact`):** Features Deep-Plum Direct-Call Masthead, Interactive Validated Form (`Send us message!` with honest non-delivery notice) & Clinic Information Panel, and Responsive Google Map + `Get directions`.
 - **Zero Orphaned Assets or Copy:** Every one of the 51 original assets and every paragraph from `docs/content-inventory.md` maps cleanly to `/`, `/our-services`, `/about-us`, `/contact`, or `*`.
 - **Source Discrepancies Preserved:** `"Sedation Dentistry"` cosmetic copy, `/our-services` `93307` ZIP discrepancy, `2025` copyright year, and `+92` JSON-LD phone typo remain untouched pending business-owner approval.
