@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '../components/common/Button';
 import { SectionHeading } from '../components/common/SectionHeading';
 import {
@@ -44,9 +45,9 @@ export function AboutPage() {
               <Button variant="gold" to={ABOUT_HERO.primaryCtaTo}>
                 {ABOUT_HERO.primaryCtaLabel}
               </Button>
-              <Button variant="outline" to={ABOUT_HERO.secondaryCtaTo}>
-                {ABOUT_HERO.secondaryCtaLabel}
-              </Button>
+              <Link className="ui-inline-link" to={ABOUT_HERO.secondaryCtaTo}>
+                {ABOUT_HERO.secondaryCtaLabel} →
+              </Link>
             </div>
           </div>
 
@@ -138,12 +139,12 @@ export function AboutPage() {
             </h2>
             <p className="about-community__copy">{ABOUT_COMMUNITY_CHAPTER.body}</p>
             <div className="about-community__actions">
-              <Button variant="gold" to="/contact">
-                Book Your Appointment
-              </Button>
-              <Button variant="inverse" to="/our-services#mobile-dental-outreach-programs">
-                Mobile Dental Outreach
-              </Button>
+              <Link
+                className="ui-inline-link ui-inline-link--on-dark"
+                to="/our-services#mobile-dental-outreach-programs"
+              >
+                Mobile Dental Outreach →
+              </Link>
             </div>
           </div>
         </div>
@@ -240,9 +241,12 @@ export function AboutPage() {
               <Button variant="gold" to={ABOUT_CLOSING_CTA.primaryCtaTo}>
                 {ABOUT_CLOSING_CTA.primaryCtaLabel}
               </Button>
-              <Button variant="inverse" to={ABOUT_CLOSING_CTA.secondaryCtaTo}>
-                {ABOUT_CLOSING_CTA.secondaryCtaLabel}
-              </Button>
+              <Link
+                className="ui-inline-link ui-inline-link--on-dark"
+                to={ABOUT_CLOSING_CTA.secondaryCtaTo}
+              >
+                {ABOUT_CLOSING_CTA.secondaryCtaLabel} →
+              </Link>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
+import { Link } from 'react-router-dom';
 import { CONTACT_LOCATION } from '../../data/contact';
-import { Button } from '../common/Button';
 
 export function ContactInformation() {
   return (
@@ -36,17 +36,17 @@ export function ContactInformation() {
       </dl>
 
       <div className="contact-info-card__actions">
-        <Button
-          variant="primary"
+        <a
+          className="ui-inline-link"
           href={CONTACT_LOCATION.directionsUrl}
           target="_blank"
           rel="noopener noreferrer"
         >
-          {CONTACT_LOCATION.directionsLabel}
-        </Button>
-        <Button variant="outline" to="/our-services">
-          Our Services
-        </Button>
+          {CONTACT_LOCATION.directionsLabel} →
+        </a>
+        <Link className="ui-inline-link" to="/our-services">
+          Explore Our Services →
+        </Link>
       </div>
     </aside>
   );

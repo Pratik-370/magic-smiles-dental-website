@@ -1,5 +1,4 @@
 import { CONTACT_HERO } from '../../data/contact';
-import { Button } from '../common/Button';
 
 export function ContactHero() {
   return (
@@ -25,14 +24,9 @@ export function ContactHero() {
           </a>
           <p className="contact-hero__card-meta">{CONTACT_HERO.hoursText}</p>
           <p className="contact-hero__card-addr">{CONTACT_HERO.address}</p>
-          <div className="contact-hero__card-actions">
-            <Button variant="gold" href={CONTACT_HERO.phoneHref}>
-              Call {CONTACT_HERO.phoneDisplay}
-            </Button>
-            <Button variant="inverse" href="#contact-form-section">
-              Send us message!
-            </Button>
-          </div>
+          <a className="ui-inline-link ui-inline-link--on-dark" href="#contact-form-section">
+            Send us message! ↓
+          </a>
         </aside>
       </div>
     </section>

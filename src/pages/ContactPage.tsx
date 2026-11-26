@@ -70,13 +70,7 @@ export function ContactPage() {
             </div>
             <div className="contact-map-caption">
               <span>{CONTACT_LOCATION.address}</span>
-              <a
-                href={CONTACT_LOCATION.directionsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {CONTACT_LOCATION.directionsLabel}
-              </a>
+              <span>35.3999541, -118.9496722</span>
             </div>
           </div>
         </div>

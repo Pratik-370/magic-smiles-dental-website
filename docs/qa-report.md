@@ -1,24 +1,23 @@
 # Integrated Quality Assurance Report — Magic Smiles Dental & Orthodontics
 
-**QA Date:** 2026-11-26  
-**Target Branch:** `main` (local development version, uncommitted QA fixes staged/verified prior to checkpoint)  
+**QA Date:** 2026-11-26 (Updated post-Mentor Refinement)  
+**Target Branch:** `main`  
 **Verification Environments:**  
 - TypeScript + Vite Production Build (`npm run build`)  
-- Vite Development Server (`http://127.0.0.1:4185`) via Headless Google Chrome CDP  
-- Vite Production Preview (`npm run preview` on `http://127.0.0.1:4186`) via Headless Google Chrome CDP  
+- Vite Development Server (`http://127.0.0.1:4187`) via Headless Google Chrome CDP (9 viewports × 4 routes = 36 checks)  
+- Vite Production Preview (`npm run preview` on `http://127.0.0.1:4188`) via Headless Google Chrome CDP  
 
 ---
 
 ## 1. Executive Summary & Readiness Status
 
 - **Readiness Verdict:** **Ready for mentor review with documented limitations.**
-- **Passed Summary:** All four core pages (`Home`, `Our Services`, `About Us`, `Contact`) plus `/404` fallback (`NotFoundPage`) render cleanly across Desktop (`1440×900`), Tablet (`820×1180`), Mobile (`390×844`), and Narrow Mobile (`360×780`) with zero horizontal overflow, zero broken local assets (`51/51` present on disk, `100%` rendered images loaded), zero console errors, zero uncaught exceptions, and zero local HTTP `>= 400` responses.
-- **Technical Defects Identified & Fixed During QA:**
-  1. Replaced temporary developer scaffolding on unmatched `*` routes with dedicated [NotFoundPage.tsx](../../src/pages/NotFoundPage.tsx) (`<h1>Page Not Found</h1>`, `<title>Magic Smiles Dental</title>`, `"We can’t seem to find the page you’re looking for."`, `"Go To Home Page"`).
-  2. Added the source homepage `<meta name="description">` directly to [index.html](../../index.html) so initial `/` load has full SEO metadata before client hydration.
-  3. Upgraded [ThemedStoryViewer.tsx](../../src/components/home/ThemedStoryViewer.tsx) with full WAI-ARIA tab linking (`id`/`aria-controls`/`aria-labelledby`) and `ArrowLeft` / `ArrowRight` keyboard switching.
-  4. Added initial focus management on [MobileNavigation.tsx](../../src/components/layout/MobileNavigation.tsx) when the mobile navigation drawer dialog opens.
-  5. Added `docs/qa-evidence/` to [.gitignore](../../.gitignore) alongside `docs/source-reference/` and the 33 protected assets, and adjusted `.services-directory__link` spacing in `src/components/services/services.css` so desktop directory jump pills fit without triggering a scrollbar at `1440px`.
+- **Mentor Feedback Refinements Applied & Verified:**
+  1. Removed the dark top announcement strip (`AnnouncementBar.tsx` removed) while preserving `Office hours Mon-Sat: 9:00AM - 6:00PM` in the Hero, About, Contact, Mobile Drawer, and Footer.
+  2. Removed the duplicate `Book Your Appointment` header/mobile-drawer CTA while keeping `Contact` in primary navigation and extending horizontal navigation cleanly down to `768px` tablets.
+  3. Expanded fluid container tokens (`--container-max: min(94vw, 1520px)`, `--container-gutter: clamp(1rem, 2.8vw, 3rem)`) and refined hero/tablet breakpoints across all 9 tested laptop/desktop/tablet/mobile viewports (`1280×800` through `1920×1080` and `820×1180` down to `360×780`).
+  4. Consolidated/removed redundant buttons and converted secondary actions into `.ui-inline-link` text links (documented in [ui-refinement-log.md](./ui-refinement-log.md)).
+- **Prior Whole-Site QA Fixes Retained:** Dedicated [NotFoundPage.tsx](../../src/pages/NotFoundPage.tsx), static `/` meta description in [index.html](../../index.html), WAI-ARIA tab linking & arrow keys in [ThemedStoryViewer.tsx](../../src/components/home/ThemedStoryViewer.tsx), drawer focus management in [MobileNavigation.tsx](../../src/components/layout/MobileNavigation.tsx), and `docs/qa-evidence/` exclusion in [.gitignore](../../.gitignore).
 
 ---
 
@@ -95,12 +94,19 @@
 
 ## 5. Responsive, Build & Performance Metrics
 
-| Viewport / Check | `/` Home | `/our-services` | `/about-us` | `/contact` | `*` Not Found |
-|---|---|---|---|---|---|
-| **Desktop `1440×900`** | `overflowX: false` (`1425/1440`) | `overflowX: false` (`1425/1440`) | `overflowX: false` (`1425/1440`) | `overflowX: false` (`1425/1440`) | `overflowX: false` (`1425/1440`) |
-| **Tablet `820×1180`** | `overflowX: false` (`805/820`) | `overflowX: false` (`805/820`) | `overflowX: false` (`805/820`) | `overflowX: false` (`805/820`) | N/A |
-| **Mobile `390×844`** | `overflowX: false` (`390/390`) | `overflowX: false` (`390/390`) | `overflowX: false` (`390/390`) | `overflowX: false` (`390/390`) | N/A |
-| **Narrow `360×780`** | `overflowX: false` (`360/360`) | `overflowX: false` (`360/360`) | `overflowX: false` (`360/360`) | `overflowX: false` (`360/360`) | N/A |
+All `36` route×viewport combinations (`9` viewports × `4` routes) plus `*` passed with `overflowX: false`, `hasAnnouncementBar: false`, `hasHeaderBookBtn: false`, `hasHeaderContactLink: true`, and `brokenImgs: 0`:
 
-- **Production Bundle (`npm run build`):** `tsc --noEmit` + Vite `8.3.8` (`60` modules transformed, `dist/index.html` `0.75 kB`, CSS `63.40 kB` / `9.64 kB` gzip, JS `383.11 kB` / `114.21 kB` gzip). Self-hosted Raleway WOFF2 loads cleanly (`fontsLoaded: true`) with zero external font CDNs.
-- **Screenshot Evidence:** Stored locally in git-ignored `docs/qa-evidence/`.
+| Viewport | Container Width | `/` Overflow | `/our-services` Overflow | `/about-us` Overflow | `/contact` Overflow |
+|---|---|---|---|---|---|
+| **Desktop `1920×1080`** | `1520px` | `false` (`1905/1920`) | `false` (`1905/1920`) | `false` (`1905/1920`) | `false` (`1905/1920`) |
+| **Wide `1600×900`** | `1504px` | `false` (`1585/1600`) | `false` (`1585/1600`) | `false` (`1585/1600`) | `false` (`1585/1600`) |
+| **Desktop `1440×900`** | `1354px` | `false` (`1425/1440`) | `false` (`1425/1440`) | `false` (`1425/1440`) | `false` (`1425/1440`) |
+| **Laptop `1366×768`** | `1284px` | `false` (`1351/1366`) | `false` (`1351/1366`) | `false` (`1351/1366`) | `false` (`1351/1366`) |
+| **Laptop `1280×800`** | `1203px` | `false` (`1265/1280`) | `false` (`1265/1280`) | `false` (`1265/1280`) | `false` (`1265/1280`) |
+| **Tablet `820×1180`** | `771px` | `false` (`805/820`) | `false` (`805/820`) | `false` (`805/820`) | `false` (`805/820`) |
+| **Tablet `768×1024`** | `722px` | `false` (`753/768`) | `false` (`753/768`) | `false` (`753/768`) | `false` (`753/768`) |
+| **Mobile `390×844`** | `367px` | `false` (`390/390`) | `false` (`390/390`) | `false` (`390/390`) | `false` (`390/390`) |
+| **Narrow `360×780`** | `338px` | `false` (`360/360`) | `false` (`360/360`) | `false` (`360/360`) | `false` (`360/360`) |
+
+- **Production Bundle (`npm run build`):** `tsc --noEmit` + Vite `8.3.8` (`59` modules transformed, `dist/index.html` `0.75 kB`, CSS `62.47 kB` / `9.57 kB` gzip, JS `381.82 kB` / `114.05 kB` gzip). Self-hosted Raleway WOFF2 loads cleanly (`fontsLoaded: true`) with zero external font CDNs.
+- **Screenshot Evidence:** Updated screenshots stored locally in git-ignored `docs/qa-evidence/refined/` alongside initial baseline captures in `docs/qa-evidence/`.

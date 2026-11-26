@@ -428,7 +428,7 @@
 /* 4. Responsive Breakpoints                                                  */
 /* -------------------------------------------------------------------------- */
 
-@media (max-width: 960px) {
+@media (max-width: 860px) {
   .contact-hero__grid,
   .contact-workspace__grid {
     grid-template-columns: 1fr;

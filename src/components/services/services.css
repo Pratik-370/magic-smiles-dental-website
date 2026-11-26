@@ -5,7 +5,7 @@
 /* -------------------------------------------------------------------------- */
 
 .services-hero {
-  padding: clamp(2.25rem, 4.5vw, 4rem) 0 clamp(2rem, 4vw, 3.25rem);
+  padding: clamp(2rem, 3.8vw, 3.75rem) 0 clamp(1.75rem, 3.2vw, 3rem);
   background:
     radial-gradient(circle at 12% 18%, rgba(91, 24, 114, 0.06), transparent 44%),
     radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.08), transparent 40%),
@@ -15,8 +15,8 @@
 
 .services-hero__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: clamp(2rem, 4vw, 3.75rem);
+  grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+  gap: clamp(1.75rem, 3.6vw, 3.75rem);
   align-items: center;
 }
 
@@ -78,28 +78,8 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--space-3);
+  gap: var(--space-4);
   margin-top: var(--space-2);
-}
-
-.services-hero__phone-link {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.78rem 1.35rem;
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--color-border-strong, #d4cadf);
-  background: var(--color-surface);
-  color: var(--color-text);
-  font-size: var(--text-sm);
-  font-weight: 700;
-  text-decoration: none;
-  transition: border-color 160ms ease, background-color 160ms ease, color 160ms ease;
-}
-
-.services-hero__phone-link:hover {
-  border-color: var(--color-primary);
-  background: var(--color-primary-soft);
-  color: var(--color-primary-strong);
 }
 
 .services-hero__media {
@@ -692,10 +672,9 @@
 /* 6. Responsive Breakpoints                                                  */
 /* -------------------------------------------------------------------------- */
 
-@media (max-width: 960px) {
+@media (max-width: 900px) {
   .services-hero__grid,
   .service-feature-split,
-  .service-pair-grid,
   .service-editorial-row,
   .service-editorial-row--reverse,
   .outreach-showcase,
@@ -716,6 +695,12 @@
   }
 }
 
+@media (max-width: 740px) {
+  .service-pair-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 640px) {
   .services-note__fields {
     grid-template-columns: 1fr;
@@ -727,7 +712,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .services-hero__phone-link,
   .services-directory__link {
     transition: none;
   }

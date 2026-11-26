@@ -21,9 +21,6 @@ export function HomeContactCta() {
               <Button to={HOME_CONTACT_PREVIEW.ctaTo} variant="gold">
                 {HOME_CONTACT_PREVIEW.primaryCtaLabel}
               </Button>
-              <Button to={HOME_CONTACT_PREVIEW.ctaTo} variant="inverse">
-                {HOME_CONTACT_PREVIEW.secondaryCtaLabel}
-              </Button>
             </div>
           </div>
 

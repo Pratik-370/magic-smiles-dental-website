@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { SITE_INFO } from '../../data/site';
-import { Button } from '../common/Button';
 import { MobileNavigation } from './MobileNavigation';
 import { Navigation } from './Navigation';
 import './layout.css';
@@ -34,9 +33,6 @@ export function Header() {
 
           <div className="site-header__desktop-actions">
             <Navigation />
-            <Button to={SITE_INFO.headerCtaTo} variant="primary">
-              {SITE_INFO.headerCtaLabel}
-            </Button>
           </div>
 
           <button

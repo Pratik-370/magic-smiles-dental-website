@@ -511,15 +511,17 @@
 /* 6. Responsive Breakpoints                                                  */
 /* -------------------------------------------------------------------------- */
 
-@media (max-width: 1020px) {
+@media (max-width: 900px) {
   .about-hero__grid,
   .about-chapter-row,
   .about-chapter-row--reverse,
   .about-community-grid,
-  .trusted-row-two,
-  .trusted-spotlight,
-  .trusted-row-three {
+  .trusted-spotlight {
     grid-template-columns: 1fr;
+  }
+
+  .trusted-row-three {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .about-chapter-row--reverse .about-chapter-row__body {
@@ -529,6 +531,13 @@
   .trusted-spotlight__media {
     min-height: 220px;
     aspect-ratio: 16 / 10;
+  }
+}
+
+@media (max-width: 700px) {
+  .trusted-row-two,
+  .trusted-row-three {
+    grid-template-columns: 1fr;
   }
 }
 

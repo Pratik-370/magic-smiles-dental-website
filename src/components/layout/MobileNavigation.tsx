@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { NAV_ITEMS, SITE_INFO } from '../../data/site';
-import { Button } from '../common/Button';
 import './layout.css';
 
 interface MobileNavigationProps {
@@ -76,12 +75,9 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
         </nav>
 
         <div className="mobile-nav-drawer__actions">
-          <Button to={SITE_INFO.headerCtaTo} variant="primary" onClick={onClose}>
-            {SITE_INFO.headerCtaLabel}
-          </Button>
-          <Button href={SITE_INFO.phoneHref} variant="outline">
+          <a href={SITE_INFO.phoneHref} className="mobile-nav-drawer__phone-link">
             Call {SITE_INFO.phoneDisplay}
-          </Button>
+          </a>
           <p className="mobile-nav-drawer__hours">{SITE_INFO.announcementText}</p>
         </div>
       </div>

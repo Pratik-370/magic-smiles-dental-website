@@ -26,9 +26,9 @@ We have completed the local React + Vite + TypeScript reconstruction of **Magic 
 
 - Modular React + TypeScript architecture under `src/pages/`, `src/components/`, `src/data/`, and `src/styles/`.
 - Self-hosted local `Raleway v37` WOFF2 font subsets (`public/assets/fonts/`) with zero third-party font dependency.
-- Accessible shared Announcement Bar, sticky Header navigation + mobile drawer dialog, dark high-contrast Footer, and `localStorage`-persisted Cookie Consent banner.
+- Accessible, streamlined navigation: clean sticky Header (`Home`, `About Us`, `Our Services`, `Contact`, mobile drawer dialog), dark high-contrast Footer, and `localStorage`-persisted Cookie Consent banner. Removed top black strip and duplicate header/CTA buttons per mentor feedback (see [ui-refinement-log.md](./ui-refinement-log.md)).
 - All `51/51` source assets cataloged and stored locally in `public/assets/`, with `33` permission-review images (`28` GoDaddy-bundled Getty + `5` Picsart slides) plus `docs/source-reference/` and `docs/qa-evidence/` protected from Git commits/pushes via `.gitignore`.
-- Clean production build (`npm run build`: `0` TypeScript errors, `63.40 kB` CSS / `383.11 kB` JS uncompressed).
+- Clean production build (`npm run build`: `0` TypeScript errors, `62.47 kB` CSS / `381.82 kB` JS uncompressed).
 
 ---
 
@@ -49,8 +49,8 @@ No business facts, dentist names, testimonials, certifications, or clinic email 
 
 ## 6. Testing Summary
 
-- **Dev & Production Preview Verified:** Tested all routes (`/`, `/our-services`, `/about-us`, `/contact`, and `*`) across `1440×900`, `820×1180`, `390×844`, and `360×780` in headless Google Chrome with `0` console errors, `0` runtime exceptions, `0` horizontal overflow, and `0` broken images.
-- **Visual Screenshots:** Local inspection evidence is stored in `docs/qa-evidence/` (git-ignored). Detailed test tables are recorded in [qa-report.md](./qa-report.md).
+- **Dev & Production Preview Verified:** Tested all routes (`/`, `/our-services`, `/about-us`, `/contact`, and `*`) across **9 viewports** (`1280×800`, `1366×768`, `1440×900`, `1600×900`, `1920×1080`, `820×1180`, `768×1024`, `390×844`, `360×780`) in headless Google Chrome with `0` console errors, `0` runtime exceptions, `0` horizontal overflow, and `0` broken images.
+- **Visual Screenshots:** Refined screenshots in `docs/qa-evidence/refined/` and detailed verification tables in [qa-report.md](./qa-report.md) & [ui-refinement-log.md](./ui-refinement-log.md) (git-ignored screenshots).
 
 ---
 

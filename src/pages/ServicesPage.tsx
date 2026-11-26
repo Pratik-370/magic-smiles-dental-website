@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '../components/common/Button';
 import { ServiceDirectoryNav } from '../components/services/ServiceDirectoryNav';
 import { ServiceNoteForm } from '../components/services/ServiceNoteForm';
@@ -42,7 +43,7 @@ export function ServicesPage() {
               <Button variant="gold" to={SERVICES_HERO.primaryCtaTo}>
                 {SERVICES_HERO.primaryCtaLabel}
               </Button>
-              <a className="services-hero__phone-link" href={SERVICES_HERO.phoneHref}>
+              <a className="ui-inline-link" href={SERVICES_HERO.phoneHref}>
                 Call {SERVICES_HERO.phoneDisplay}
               </a>
             </div>
@@ -92,9 +93,6 @@ export function ServicesPage() {
                   </li>
                 ))}
               </ul>
-              <Button variant="primary" to={generalService.ctaTo}>
-                {generalService.ctaLabel}
-              </Button>
             </div>
 
             <div className="service-feature-split__media">
@@ -146,11 +144,6 @@ export function ServicesPage() {
                     </li>
                   ))}
                 </ul>
-                <div className="service-pair-card__actions">
-                  <Button variant="outline" to={service.ctaTo}>
-                    {service.ctaLabel}
-                  </Button>
-                </div>
               </div>
             </article>
           ))}
@@ -192,9 +185,6 @@ export function ServicesPage() {
                   </li>
                 ))}
               </ul>
-              <Button variant="primary" to={sedationService.ctaTo}>
-                {sedationService.ctaLabel}
-              </Button>
             </div>
           </article>
 
@@ -227,9 +217,6 @@ export function ServicesPage() {
                   </li>
                 ))}
               </ul>
-              <Button variant="primary" to={pediatricService.ctaTo}>
-                {pediatricService.ctaLabel}
-              </Button>
             </div>
           </article>
         </div>
@@ -273,9 +260,9 @@ export function ServicesPage() {
                   </li>
                 ))}
               </ul>
-              <Button variant="gold" to={MOBILE_OUTREACH_PROGRAM.ctaTo}>
-                {MOBILE_OUTREACH_PROGRAM.ctaLabel}
-              </Button>
+              <Link className="ui-inline-link ui-inline-link--on-dark" to={MOBILE_OUTREACH_PROGRAM.ctaTo}>
+                {MOBILE_OUTREACH_PROGRAM.ctaLabel} →
+              </Link>
             </div>
           </article>
         </div>

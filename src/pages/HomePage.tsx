@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '../components/common/Button';
 import { SectionHeading } from '../components/common/SectionHeading';
 import { HomeContactCta } from '../components/home/HomeContactCta';
@@ -43,9 +44,9 @@ export function HomePage() {
                 <Button variant="gold" to={HOME_HERO.primaryCtaTo}>
                   {HOME_HERO.primaryCtaLabel}
                 </Button>
-                <a className="home-hero__secondary-link" href={HOME_HERO.secondaryCtaTo}>
-                  {HOME_HERO.secondaryCtaLabel}
-                </a>
+                <Link className="ui-inline-link" to={HOME_HERO.secondaryCtaTo}>
+                  {HOME_HERO.secondaryCtaLabel} →
+                </Link>
               </div>
             </div>
 
@@ -115,9 +116,9 @@ export function HomePage() {
                   {paragraph}
                 </p>
               ))}
-              <Button variant="primary" to={ABOUT_PREVIEW.ctaTo}>
-                {ABOUT_PREVIEW.ctaLabel}
-              </Button>
+              <Link className="ui-inline-link" to={ABOUT_PREVIEW.ctaTo}>
+                {ABOUT_PREVIEW.ctaLabel} →
+              </Link>
             </div>
           </article>
 
@@ -160,9 +161,9 @@ export function HomePage() {
               title={HOME_SERVICES_PREVIEW.heading}
               align="left"
             />
-            <Button variant="primary" to={HOME_SERVICES_PREVIEW.ctaTo}>
-              {HOME_SERVICES_PREVIEW.ctaLabel}
-            </Button>
+            <Link className="ui-inline-link" to={HOME_SERVICES_PREVIEW.ctaTo}>
+              {HOME_SERVICES_PREVIEW.ctaLabel} →
+            </Link>
           </div>
 
           <div className="services-preview-grid">
@@ -208,9 +209,6 @@ export function HomePage() {
                 ))}
               </div>
             </div>
-            <Button variant="outline" to={HOME_SERVICES_PREVIEW.ctaTo}>
-              {HOME_SERVICES_PREVIEW.ctaLabel}
-            </Button>
           </div>
         </div>
       </section>

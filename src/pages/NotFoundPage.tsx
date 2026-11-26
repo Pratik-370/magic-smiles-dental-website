@@ -22,9 +22,6 @@ export function NotFoundPage() {
             <Button variant="primary" to="/">
               Go To Home Page
             </Button>
-            <Button variant="outline" to="/contact">
-              Contact Us
-            </Button>
           </div>
           <nav className="not-found-card__links" aria-label="Main website sections">
             <Link to="/our-services">Our Services</Link>
