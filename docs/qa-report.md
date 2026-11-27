@@ -1,6 +1,6 @@
 # Integrated Quality Assurance Report — Magic Smiles Dental & Orthodontics
 
-**QA Date:** 2026-11-26 (Updated post-Mentor Refinement)  
+**QA Date:** 2026-11-27 (Updated post-Full-Width Hero Refinement)  
 **Target Branch:** `main`  
 **Verification Environments:**  
 - TypeScript + Vite Production Build (`npm run build`)  
@@ -12,6 +12,7 @@
 ## 1. Executive Summary & Readiness Status
 
 - **Readiness Verdict:** **Ready for mentor review with documented limitations.**
+- **Full-Width Hero Refinement Applied & Verified:** All four primary pages (`/`, `/our-services`, `/about-us`, `/contact`) now feature true edge-to-edge full-width heroes (`heroEdgeToEdge: 36/36`, `overflowX: 0/36`) with aligned interior content gutters and zero `100vw` scrollbar overflow (see [hero-refinement-report.md](./hero-refinement-report.md)).
 - **Mentor Feedback Refinements Applied & Verified:**
   1. Removed the dark top announcement strip (`AnnouncementBar.tsx` removed) while preserving `Office hours Mon-Sat: 9:00AM - 6:00PM` in the Hero, About, Contact, Mobile Drawer, and Footer.
   2. Removed the duplicate `Book Your Appointment` header/mobile-drawer CTA while keeping `Contact` in primary navigation and extending horizontal navigation cleanly down to `768px` tablets.
@@ -108,5 +109,6 @@ All `36` route×viewport combinations (`9` viewports × `4` routes) plus `*` pas
 | **Mobile `390×844`** | `367px` | `false` (`390/390`) | `false` (`390/390`) | `false` (`390/390`) | `false` (`390/390`) |
 | **Narrow `360×780`** | `338px` | `false` (`360/360`) | `false` (`360/360`) | `false` (`360/360`) | `false` (`360/360`) |
 
-- **Production Bundle (`npm run build`):** `tsc --noEmit` + Vite `8.3.8` (`59` modules transformed, `dist/index.html` `0.75 kB`, CSS `62.47 kB` / `9.57 kB` gzip, JS `381.82 kB` / `114.05 kB` gzip). Self-hosted Raleway WOFF2 loads cleanly (`fontsLoaded: true`) with zero external font CDNs.
-- **Screenshot Evidence:** Updated screenshots stored locally in git-ignored `docs/qa-evidence/refined/` alongside initial baseline captures in `docs/qa-evidence/`.
+- **Production Bundle (`npm run build`):** `tsc --noEmit` + Vite `8.3.8` (`59` modules transformed, `dist/index.html` `0.75 kB` / `0.42 kB` gzip, CSS `63.71 kB` / `9.85 kB` gzip, JS `382.12 kB` / `114.13 kB` gzip, built in `472ms`). Self-hosted Raleway WOFF2 loads cleanly (`fontsLoaded: true`) with zero external font CDNs.
+- **Full-Width Hero Verification:** `heroEdgeToEdge: 36/36` (`heroLeft === 0` and `heroWidth === clientWidth`, with `overflowX: false` and `brokenImgs: 0`) verified across all `9` viewports on dev (`4187`) and `5/5` routes (`/` through `/unknown-route`) on production preview (`4188`).
+- **Screenshot Evidence:** Full-width hero after screenshots stored locally in git-ignored `docs/qa-evidence/full-width-heroes/` alongside refined before screenshots in `docs/qa-evidence/refined/` and initial baseline captures in `docs/qa-evidence/`.

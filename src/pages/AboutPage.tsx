@@ -31,50 +31,54 @@ export function AboutPage() {
 
   return (
     <div className="about-page">
-      {/* 1. Editorial Practice Masthead */}
+      {/* 1. Full-Width Asymmetric Split Practice Masthead */}
       <section className="about-hero" aria-labelledby="about-hero-heading">
-        <div className="site-container about-hero__grid">
-          <div className="about-hero__content">
-            <span className="about-hero__eyebrow">{ABOUT_HERO.eyebrow}</span>
-            <h1 id="about-hero-heading" className="about-hero__title">
-              {ABOUT_HERO.heading}
-            </h1>
-            <p className="about-hero__subheading">{ABOUT_HERO.subheading}</p>
-            <p className="about-hero__lead">{ABOUT_HERO.introParagraph}</p>
-            <div className="about-hero__actions">
-              <Button variant="gold" to={ABOUT_HERO.primaryCtaTo}>
-                {ABOUT_HERO.primaryCtaLabel}
-              </Button>
-              <Link className="ui-inline-link" to={ABOUT_HERO.secondaryCtaTo}>
-                {ABOUT_HERO.secondaryCtaLabel} →
-              </Link>
+        <div className="about-hero__split">
+          <div className="about-hero__copy-col">
+            <div className="about-hero__content">
+              <span className="about-hero__eyebrow">{ABOUT_HERO.eyebrow}</span>
+              <h1 id="about-hero-heading" className="about-hero__title">
+                {ABOUT_HERO.heading}
+              </h1>
+              <p className="about-hero__subheading">{ABOUT_HERO.subheading}</p>
+              <p className="about-hero__lead">{ABOUT_HERO.introParagraph}</p>
+              <div className="about-hero__actions">
+                <Button variant="gold" to={ABOUT_HERO.primaryCtaTo}>
+                  {ABOUT_HERO.primaryCtaLabel}
+                </Button>
+                <Link className="ui-inline-link" to={ABOUT_HERO.secondaryCtaTo}>
+                  {ABOUT_HERO.secondaryCtaLabel} →
+                </Link>
+              </div>
             </div>
           </div>
 
-          <aside className="about-hero__fact-panel" aria-label="Bakersfield office facts">
-            <h2 className="about-hero__fact-title">{SITE_INFO.businessName}</h2>
-            <dl className="about-hero__fact-list">
-              <div className="about-hero__fact-row">
-                <dt>Location</dt>
-                <dd>{SITE_INFO.addressHomeAndFooter}</dd>
-              </div>
-              <div className="about-hero__fact-row">
-                <dt>Hours</dt>
-                <dd>{SITE_INFO.announcementText}</dd>
-              </div>
-              <div className="about-hero__fact-row">
-                <dt>Phone</dt>
-                <dd>
-                  <a className="about-hero__phone" href={SITE_INFO.phoneHref}>
-                    {SITE_INFO.phoneDisplay}
-                  </a>
-                </dd>
-              </div>
-              <div className="about-hero__fact-row">
-                <dt>Options</dt>
-                <dd>Medi-Cal, PPO insurance, and cash</dd>
-              </div>
-            </dl>
+          <aside className="about-hero__facts-col" aria-label="Bakersfield office facts">
+            <div className="about-hero__facts-inner">
+              <h2 className="about-hero__fact-title">{SITE_INFO.businessName}</h2>
+              <dl className="about-hero__fact-list">
+                <div className="about-hero__fact-row">
+                  <dt>Location</dt>
+                  <dd>{SITE_INFO.addressHomeAndFooter}</dd>
+                </div>
+                <div className="about-hero__fact-row">
+                  <dt>Hours</dt>
+                  <dd>{SITE_INFO.announcementText}</dd>
+                </div>
+                <div className="about-hero__fact-row">
+                  <dt>Phone</dt>
+                  <dd>
+                    <a className="about-hero__phone" href={SITE_INFO.phoneHref}>
+                      {SITE_INFO.phoneDisplay}
+                    </a>
+                  </dd>
+                </div>
+                <div className="about-hero__fact-row">
+                  <dt>Options</dt>
+                  <dd>Medi-Cal, PPO insurance, and cash</dd>
+                </div>
+              </dl>
+            </div>
           </aside>
         </div>
       </section>

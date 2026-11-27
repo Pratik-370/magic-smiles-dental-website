@@ -1,22 +1,31 @@
 /* Contact Page — Editorial Dark Masthead, Form Workspace & Location Map */
 
 /* -------------------------------------------------------------------------- */
-/* 1. Deep-Plum Contact Hero                                                  */
+/* 1. Full-Width Edge-to-Edge Deep-Plum Contact Hero                          */
 /* -------------------------------------------------------------------------- */
 
 .contact-hero {
-  padding: clamp(2.5rem, 5vw, 4.5rem) 0 clamp(2.5rem, 4.5vw, 3.75rem);
+  width: 100%;
   background:
-    radial-gradient(circle at 88% 18%, rgba(245, 158, 11, 0.16), transparent 42%),
+    radial-gradient(circle at 86% 18%, rgba(245, 158, 11, 0.14), transparent 44%),
     linear-gradient(155deg, var(--color-primary-deep) 0%, #1d0728 100%);
   color: var(--color-text-inverse);
+  overflow: clip;
 }
 
-.contact-hero__grid {
+.contact-hero__split {
+  width: 100%;
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: clamp(2rem, 4.5vw, 4rem);
+  align-items: stretch;
+}
+
+.contact-hero__copy-col {
+  display: flex;
   align-items: center;
+  padding-block: clamp(2.5rem, 5vw, 4.5rem);
+  padding-inline-start: calc(max(3%, 50% - 760px) + var(--container-gutter));
+  padding-inline-end: clamp(1.5rem, 3.8vw, 4rem);
 }
 
 .contact-hero__content {
@@ -24,6 +33,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-4);
+  max-width: 56ch;
 }
 
 .contact-hero__eyebrow {
@@ -44,7 +54,7 @@
 .contact-hero__title {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: clamp(2.25rem, 4.3vw, 3.45rem);
+  font-size: clamp(2.25rem, 4.3vw, 3.55rem);
   line-height: 1.06;
   letter-spacing: -0.02em;
   color: var(--color-text-inverse);
@@ -61,15 +71,22 @@
   margin: 0;
   font-size: var(--text-base);
   line-height: 1.72;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.9);
   max-width: 54ch;
 }
 
-.contact-hero__card {
-  padding: clamp(1.5rem, 3vw, 2.25rem);
-  border-radius: 26px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+.contact-hero__call-col {
+  display: flex;
+  align-items: center;
+  padding-block: clamp(2rem, 4.5vw, 4rem);
+  padding-inline-start: clamp(1.75rem, 3.5vw, 3.5rem);
+  padding-inline-end: calc(max(3%, 50% - 760px) + var(--container-gutter));
+  background: rgba(12, 4, 20, 0.42);
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.contact-hero__call-inner {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -429,13 +446,26 @@
 /* -------------------------------------------------------------------------- */
 
 @media (max-width: 860px) {
-  .contact-hero__grid,
+
+  .contact-hero__split,
   .contact-workspace__grid {
     grid-template-columns: 1fr;
+  }
+
+  .contact-hero__copy-col,
+  .contact-hero__call-col {
+    padding-inline: var(--container-gutter);
+    padding-block: var(--space-6);
+  }
+
+  .contact-hero__call-col {
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .contact-form__field input,
   .contact-form__field textarea {
     transition: none;

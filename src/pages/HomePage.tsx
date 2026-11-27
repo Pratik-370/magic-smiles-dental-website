@@ -30,10 +30,10 @@ export function HomePage() {
 
   return (
     <div className="home-page">
-      {/* 1. Editorial Asymmetric Hero */}
+      {/* 1. Full-Width Editorial Split-Bleed Hero */}
       <section className="home-hero" aria-labelledby="home-hero-heading">
-        <div className="site-container">
-          <div className="home-hero__grid">
+        <div className="home-hero__split">
+          <div className="home-hero__copy-col">
             <div className="home-hero__content">
               <span className="home-hero__eyebrow">{HOME_HERO.eyebrow}</span>
               <h1 id="home-hero-heading" className="home-hero__title">
@@ -49,26 +49,26 @@ export function HomePage() {
                 </Link>
               </div>
             </div>
-
-            <div className="home-hero__media-wrap">
-              <div className="home-hero__frame">
-                <img
-                  className="home-hero__img"
-                  src={HOME_HERO.imageSrc}
-                  alt={HOME_HERO.imageAlt}
-                />
-              </div>
-              <div className="home-hero__inset-emblem">
-                <img
-                  className="home-hero__inset-img"
-                  src={HOME_HERO.insetEmblemSrc}
-                  alt={HOME_HERO.insetEmblemAlt}
-                />
-              </div>
-            </div>
           </div>
 
-          <div className="home-hero__fact-bar" aria-label="Clinic hours, location, and phone">
+          <div className="home-hero__media-col">
+            <img
+              className="home-hero__img"
+              src={HOME_HERO.imageSrc}
+              alt={HOME_HERO.imageAlt}
+            />
+            <div className="home-hero__inset-emblem">
+              <img
+                className="home-hero__inset-img"
+                src={HOME_HERO.insetEmblemSrc}
+                alt={HOME_HERO.insetEmblemAlt}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="home-hero__fact-strip" aria-label="Clinic hours, location, and phone">
+          <div className="site-container home-hero__fact-bar">
             <div className="home-hero__fact">
               <span className="home-hero__fact-label">Hours</span>
               <span className="home-hero__fact-value">

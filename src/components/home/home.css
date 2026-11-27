@@ -1,32 +1,41 @@
 /* Editorial Homepage Styles for Magic Smiles Dental & Orthodontics */
 
 /* -------------------------------------------------------------------------- */
-/* 1. Editorial Asymmetric Hero                                               */
+/* 1. Full-Width Editorial Split-Bleed Hero                                   */
 /* -------------------------------------------------------------------------- */
 
 .home-hero {
+  width: 100%;
   position: relative;
-  padding: clamp(1.75rem, 3.6vw, 3.75rem) 0 clamp(2rem, 3.5vw, 3.25rem);
   background:
-    radial-gradient(circle at 8% 12%, rgba(91, 24, 114, 0.06), transparent 46%),
-    radial-gradient(circle at 92% 85%, rgba(245, 158, 11, 0.08), transparent 42%),
+    radial-gradient(circle at 8% 15%, rgba(91, 24, 114, 0.06), transparent 44%),
     var(--color-bg);
   border-bottom: 1px solid var(--color-border);
   overflow: clip;
 }
 
-.home-hero__grid {
+.home-hero__split {
+  width: 100%;
   display: grid;
-  grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
-  gap: clamp(1.75rem, 3.6vw, 4rem);
+  grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr);
+  align-items: stretch;
+  min-height: clamp(440px, 46vw, 600px);
+}
+
+.home-hero__copy-col {
+  display: flex;
   align-items: center;
+  padding-block: clamp(2rem, 4.2vw, 3.75rem);
+  padding-inline-start: calc(max(3%, 50% - 760px) + var(--container-gutter));
+  padding-inline-end: clamp(1.5rem, 3.5vw, 3.75rem);
 }
 
 .home-hero__content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--space-5);
+  gap: var(--space-4);
+  max-width: 54ch;
 }
 
 .home-hero__eyebrow {
@@ -55,12 +64,12 @@
 .home-hero__title {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 4.4vw, 3.65rem);
+  font-size: clamp(2.25rem, 4.3vw, 3.8rem);
   font-weight: 700;
   line-height: 1.06;
   letter-spacing: -0.02em;
   color: var(--color-text);
-  max-width: 17ch;
+  max-width: 16ch;
 }
 
 .home-hero__subtitle {
@@ -68,7 +77,7 @@
   font-size: clamp(1rem, 1.35vw, 1.15rem);
   line-height: 1.68;
   color: var(--color-text-muted);
-  max-width: 52ch;
+  max-width: 48ch;
 }
 
 .home-hero__actions {
@@ -79,22 +88,17 @@
   margin-top: var(--space-1);
 }
 
-.home-hero__media-wrap {
+.home-hero__media-col {
   position: relative;
-  display: grid;
-}
-
-.home-hero__frame {
-  position: relative;
-  border-radius: 28px;
-  overflow: hidden;
-  border: 1px solid rgba(91, 24, 114, 0.14);
-  box-shadow: 0 28px 60px -24px rgba(47, 11, 61, 0.28);
-  aspect-ratio: 4 / 3;
+  width: 100%;
+  min-height: 360px;
   background: var(--color-parchment);
+  overflow: hidden;
 }
 
 .home-hero__img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -104,15 +108,16 @@
 
 .home-hero__inset-emblem {
   position: absolute;
-  left: -1.15rem;
-  bottom: -1.15rem;
-  width: clamp(92px, 12vw, 132px);
+  left: var(--space-5);
+  bottom: var(--space-5);
+  z-index: 2;
+  width: clamp(84px, 9vw, 120px);
   aspect-ratio: 1;
-  border-radius: 22px;
-  padding: 0.55rem;
+  border-radius: 20px;
+  padding: 0.5rem;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  box-shadow: 0 18px 36px -14px rgba(17, 14, 23, 0.26);
+  box-shadow: 0 18px 36px -14px rgba(17, 14, 23, 0.34);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -122,20 +127,21 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 14px;
+  border-radius: 13px;
   display: block;
 }
 
-.home-hero__fact-bar {
-  margin-top: clamp(2rem, 4vw, 3rem);
-  padding: var(--space-4) var(--space-5);
-  border-radius: var(--radius-lg);
+.home-hero__fact-strip {
+  width: 100%;
   background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-border);
+}
+
+.home-hero__fact-bar {
+  padding-block: var(--space-4);
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--space-4);
-  box-shadow: 0 10px 30px -22px rgba(47, 11, 61, 0.22);
 }
 
 .home-hero__fact {
@@ -1011,7 +1017,7 @@ a.home-hero__fact-value:hover {
 /* -------------------------------------------------------------------------- */
 
 @media (max-width: 900px) {
-  .home-hero__grid,
+  .home-hero__split,
   .about-why-grid,
   .priority-mosaic,
   .fun-zone__layout,
@@ -1020,15 +1026,25 @@ a.home-hero__fact-value:hover {
     grid-template-columns: 1fr;
   }
 
+  .home-hero__copy-col {
+    padding-inline: var(--container-gutter);
+    padding-block: var(--space-8);
+  }
+
+  .home-hero__media-col {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+
   .service-preview-card--lead {
     grid-column: span 2;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 
   .home-hero__inset-emblem {
-    left: 0.75rem;
-    bottom: 0.75rem;
-    width: 84px;
+    left: var(--space-4);
+    bottom: var(--space-4);
+    width: 78px;
   }
 
   .story-viewer__tabs {

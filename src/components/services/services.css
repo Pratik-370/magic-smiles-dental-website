@@ -1,23 +1,50 @@
 /* Our Services Page — Treatment Discovery Experience */
 
 /* -------------------------------------------------------------------------- */
-/* 1. Services Hero                                                           */
+/* 1. Full-Width Panoramic Services Hero                                      */
 /* -------------------------------------------------------------------------- */
 
 .services-hero {
-  padding: clamp(2rem, 3.8vw, 3.75rem) 0 clamp(1.75rem, 3.2vw, 3rem);
-  background:
-    radial-gradient(circle at 12% 18%, rgba(91, 24, 114, 0.06), transparent 44%),
-    radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.08), transparent 40%),
-    var(--color-bg);
-  border-bottom: 1px solid var(--color-border);
+  width: 100%;
+  position: relative;
+  min-height: clamp(400px, 42vw, 540px);
+  display: flex;
+  align-items: center;
+  background-color: var(--color-primary-deep);
+  color: var(--color-text-inverse);
+  overflow: hidden;
 }
 
-.services-hero__grid {
-  display: grid;
-  grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
-  gap: clamp(1.75rem, 3.6vw, 3.75rem);
-  align-items: center;
+.services-hero__backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.services-hero__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 68% 22%;
+  display: block;
+}
+
+.services-hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(24, 6, 34, 0.95) 0%,
+    rgba(24, 6, 34, 0.88) 42%,
+    rgba(47, 11, 61, 0.52) 70%,
+    rgba(47, 11, 61, 0.16) 100%
+  );
+}
+
+.services-hero__inner {
+  position: relative;
+  z-index: 1;
+  padding-block: clamp(2.5rem, 5vw, 4.5rem);
 }
 
 .services-hero__content {
@@ -25,6 +52,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-4);
+  max-width: 52ch;
 }
 
 .services-hero__eyebrow {
@@ -33,9 +61,9 @@
   gap: 0.55rem;
   padding: 0.42rem 0.9rem;
   border-radius: var(--radius-pill);
-  background: var(--color-primary-soft);
-  border: 1px solid var(--color-primary-tint);
-  color: var(--color-primary);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: var(--color-accent);
   font-size: var(--text-xs);
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -47,31 +75,31 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--color-accent-strong);
+  background: var(--color-accent);
 }
 
 .services-hero__title {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 4.3vw, 3.45rem);
+  font-size: clamp(2.3rem, 4.4vw, 3.6rem);
   line-height: 1.06;
   letter-spacing: -0.02em;
-  color: var(--color-text);
+  color: var(--color-text-inverse);
 }
 
 .services-hero__subtitle {
   margin: 0;
-  font-size: clamp(1.05rem, 1.45vw, 1.2rem);
+  font-size: clamp(1.05rem, 1.45vw, 1.22rem);
   line-height: 1.65;
-  color: var(--color-text-muted);
-  max-width: 46ch;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 44ch;
 }
 
 .services-hero__meta {
   margin: 0;
   font-size: var(--text-sm);
   font-weight: 600;
-  color: var(--color-primary-strong);
+  color: var(--color-accent);
 }
 
 .services-hero__actions {
@@ -80,27 +108,6 @@
   align-items: center;
   gap: var(--space-4);
   margin-top: var(--space-2);
-}
-
-.services-hero__media {
-  position: relative;
-}
-
-.services-hero__frame {
-  border-radius: 26px;
-  overflow: hidden;
-  aspect-ratio: 4 / 3;
-  border: 1px solid rgba(91, 24, 114, 0.14);
-  background: var(--color-parchment);
-  box-shadow: 0 26px 56px -26px rgba(47, 11, 61, 0.26);
-}
-
-.services-hero__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 22%;
-  display: block;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -673,7 +680,27 @@
 /* -------------------------------------------------------------------------- */
 
 @media (max-width: 900px) {
-  .services-hero__grid,
+  .services-hero {
+    min-height: 0;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .services-hero__backdrop {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+  }
+
+  .services-hero__scrim {
+    background: linear-gradient(180deg, rgba(24, 6, 34, 0.08) 0%, rgba(24, 6, 34, 0.45) 100%);
+  }
+
+  .services-hero__inner {
+    padding-block: var(--space-6);
+  }
+
   .service-feature-split,
   .service-editorial-row,
   .service-editorial-row--reverse,

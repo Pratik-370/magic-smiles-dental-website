@@ -1,23 +1,32 @@
 /* About Us Page — Practice Narrative & Editorial Composition */
 
 /* -------------------------------------------------------------------------- */
-/* 1. Editorial Practice Masthead                                             */
+/* 1. Full-Width Asymmetric Bi-Surface Practice Masthead                      */
 /* -------------------------------------------------------------------------- */
 
 .about-hero {
-  padding: clamp(2.5rem, 5vw, 4.5rem) 0 clamp(2.25rem, 4.5vw, 3.5rem);
-  background:
-    radial-gradient(circle at 8% 15%, rgba(91, 24, 114, 0.06), transparent 45%),
-    radial-gradient(circle at 92% 85%, rgba(245, 158, 11, 0.08), transparent 42%),
-    var(--color-bg);
+  width: 100%;
+  background: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
+  overflow: clip;
 }
 
-.about-hero__grid {
+.about-hero__split {
+  width: 100%;
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: clamp(2rem, 4.5vw, 4rem);
-  align-items: end;
+  grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
+  align-items: stretch;
+}
+
+.about-hero__copy-col {
+  display: flex;
+  align-items: center;
+  padding-block: clamp(2.5rem, 5vw, 4.5rem);
+  padding-inline-start: calc(max(3%, 50% - 760px) + var(--container-gutter));
+  padding-inline-end: clamp(1.5rem, 3.8vw, 4rem);
+  background:
+    radial-gradient(circle at 8% 15%, rgba(91, 24, 114, 0.06), transparent 46%),
+    var(--color-bg);
 }
 
 .about-hero__content {
@@ -25,6 +34,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-4);
+  max-width: 58ch;
 }
 
 .about-hero__eyebrow {
@@ -53,11 +63,11 @@
 .about-hero__title {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: clamp(2.25rem, 4.4vw, 3.55rem);
+  font-size: clamp(2.25rem, 4.4vw, 3.65rem);
   line-height: 1.06;
   letter-spacing: -0.02em;
   color: var(--color-text);
-  max-width: 16ch;
+  max-width: 17ch;
 }
 
 .about-hero__subheading {
@@ -79,16 +89,23 @@
 .about-hero__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-3);
+  align-items: center;
+  gap: var(--space-4);
   margin-top: var(--space-1);
 }
 
-.about-hero__fact-panel {
-  padding: clamp(1.4rem, 2.8vw, 2rem);
-  border-radius: 24px;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  box-shadow: 0 22px 48px -28px rgba(47, 11, 61, 0.22);
+.about-hero__facts-col {
+  display: flex;
+  align-items: center;
+  padding-block: clamp(2rem, 4.5vw, 4rem);
+  padding-inline-start: clamp(1.75rem, 3.5vw, 3.5rem);
+  padding-inline-end: calc(max(3%, 50% - 760px) + var(--container-gutter));
+  background: #f0e8f7;
+  border-left: 1px solid var(--color-border);
+}
+
+.about-hero__facts-inner {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
@@ -512,12 +529,23 @@
 /* -------------------------------------------------------------------------- */
 
 @media (max-width: 900px) {
-  .about-hero__grid,
+  .about-hero__split,
   .about-chapter-row,
   .about-chapter-row--reverse,
   .about-community-grid,
   .trusted-spotlight {
     grid-template-columns: 1fr;
+  }
+
+  .about-hero__copy-col,
+  .about-hero__facts-col {
+    padding-inline: var(--container-gutter);
+    padding-block: var(--space-6);
+  }
+
+  .about-hero__facts-col {
+    border-left: 0;
+    border-top: 1px solid var(--color-border);
   }
 
   .trusted-row-three {

@@ -29,9 +29,18 @@ export function ServicesPage() {
 
   return (
     <div className="services-page">
-      {/* 1. Services Hero */}
+      {/* 1. Full-Width Panoramic Services Hero */}
       <section className="services-hero" aria-labelledby="services-hero-heading">
-        <div className="site-container services-hero__grid">
+        <div className="services-hero__backdrop">
+          <img
+            className="services-hero__bg-img"
+            src={SERVICES_HERO.imageSrc}
+            alt={SERVICES_HERO.imageAlt}
+          />
+          <div className="services-hero__scrim" aria-hidden="true" />
+        </div>
+
+        <div className="site-container services-hero__inner">
           <div className="services-hero__content">
             <span className="services-hero__eyebrow">{SERVICES_HERO.eyebrow}</span>
             <h1 id="services-hero-heading" className="services-hero__title">
@@ -43,19 +52,9 @@ export function ServicesPage() {
               <Button variant="gold" to={SERVICES_HERO.primaryCtaTo}>
                 {SERVICES_HERO.primaryCtaLabel}
               </Button>
-              <a className="ui-inline-link" href={SERVICES_HERO.phoneHref}>
+              <a className="ui-inline-link ui-inline-link--on-dark" href={SERVICES_HERO.phoneHref}>
                 Call {SERVICES_HERO.phoneDisplay}
               </a>
-            </div>
-          </div>
-
-          <div className="services-hero__media">
-            <div className="services-hero__frame">
-              <img
-                className="services-hero__img"
-                src={SERVICES_HERO.imageSrc}
-                alt={SERVICES_HERO.imageAlt}
-              />
             </div>
           </div>
         </div>

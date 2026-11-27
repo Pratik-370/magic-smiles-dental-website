@@ -1,6 +1,6 @@
 # Mentor Review Brief — Magic Smiles Dental & Orthodontics Website Recreation
 
-**Prepared:** 2026-11-26  
+**Prepared:** 2026-11-27 (Updated post-Full-Width Hero Refinement)  
 **Repository:** `Pratik-370/magic-smiles-dental-website` (Local branch `main`, held locally pending review)  
 **Tech Stack:** React 19, TypeScript 7, Vite 8, React Router 7, Standard CSS with design tokens  
 
@@ -8,16 +8,16 @@
 
 ## 1. Project Overview
 
-We have completed the local React + Vite + TypeScript reconstruction of **Magic Smiles Dental & Orthodontics** (`https://magicsmilesdentalandortho.com/`). Every original page, service description, practice philosophy paragraph, themed story chapter, contact detail, and original photograph has been preserved locally and integrated into a modern multi-page architecture ready for mentor review.
+We have completed the local React + Vite + TypeScript reconstruction of **Magic Smiles Dental & Orthodontics** (`https://magicsmilesdentalandortho.com/`). Every original page, service description, practice philosophy paragraph, themed story chapter, contact detail, and original photograph has been preserved locally and integrated into a modern multi-page architecture with edge-to-edge full-width hero sections ready for mentor review.
 
 ---
 
 ## 2. Completed Pages & Functional Scope
 
-1. **Home (`/`)** — Asymmetric editorial Hero (`Expert Dental Care for Your Family`), clinic hours/address/phone fact bar, concise About preview linking to `/about-us`, numbered *"Why Choose Magic Smiles Dental and Orthodontics?"* points, curated 3-service preview linking to `/our-services`, interactive 6-photo *"Your Smile, Our Priority"* mosaic, deep-plum 9-photo *"The Fun Zone for Little Smiles"* clinic gallery, interactive 5-chapter Themed Dentistry storybook viewer with verbatim transcripts, and compact *"Visit Us Today!"* CTA band linking to `/contact`.
-2. **Our Services (`/our-services`)** — Services Hero with patient exam photography, sticky section quick-jump directory, varied editorial layouts covering all 6 source items (`General & Preventive Dentistry`, `Orthodontics`, `Dental Implants & Restoration`, `Sedation Dentistry`, `Pediatric Dentistry`, and a dedicated deep-plum `Community Outreach Program` spotlight for `Mobile Dental Outreach Programs` with non-destructive DOC RV framing), plus *"Visit Us Today!"* and the expandable `"Send a note"` form.
-3. **About Us (`/about-us`)** — Editorial practice masthead paired with verified clinic facts, alternating philosophy chapters (`Expert Dental Care`, `Our Technology`), deep-plum `Our Community` feature linking to outreach programs, an asymmetric `2 + 1 + 3` showcase presenting all six *"Magic Smiles Dental - Your Trusted Dental Care Provider"* pillars and photographs, and closing CTAs.
-4. **Contact (`/contact`)** — Deep-plum direct-call hero (`661-516-2904`), accessible validated contact form (`Send us message!` with honest offline notice and state retention), Clinic Details sidebar (address, hours, `Medi-Cal, PPO insurance, and cash payments`, directions), and responsive Google Map + `"Get directions"` section.
+1. **Home (`/`)** — Edge-to-edge full-bleed split Hero (`Expert Dental Care for Your Family`) with full-width kids circle photography bleed and continuous bottom clinic fact strip (`Hours`, `Location`, `Call Clinic`), concise About preview linking to `/about-us`, numbered *"Why Choose Magic Smiles Dental and Orthodontics?"* points, curated 3-service preview linking to `/our-services`, interactive 6-photo *"Your Smile, Our Priority"* mosaic, deep-plum 9-photo *"The Fun Zone for Little Smiles"* clinic gallery, interactive 5-chapter Themed Dentistry storybook viewer with verbatim transcripts, and compact *"Visit Us Today!"* CTA band linking to `/contact`.
+2. **Our Services (`/our-services`)** — Full-width panoramic photo banner Hero with directional dark plum scrim over patient exam photography flush above the sticky section quick-jump directory, varied editorial layouts covering all 6 source items (`General & Preventive Dentistry`, `Orthodontics`, `Dental Implants & Restoration`, `Sedation Dentistry`, `Pediatric Dentistry`, and a dedicated deep-plum `Community Outreach Program` spotlight for `Mobile Dental Outreach Programs` with non-destructive DOC RV framing), plus *"Visit Us Today!"* and the expandable `"Send a note"` form.
+3. **About Us (`/about-us`)** — Asymmetric full-width bi-surface masthead pairing the warm ivory editorial intro with a flush right lavender (`#f0e8f7`) verified Clinic Facts panel, alternating philosophy chapters (`Expert Dental Care`, `Our Technology`), deep-plum `Our Community` feature linking to outreach programs, an asymmetric `2 + 1 + 3` showcase presenting all six *"Magic Smiles Dental - Your Trusted Dental Care Provider"* pillars and photographs, and closing CTAs.
+4. **Contact (`/contact`)** — Edge-to-edge deep royal plum split Hero paired with a flush darker plum direct-call panel (`661-516-2904`), accessible validated contact form (`Send us message!` with honest offline notice and state retention), Clinic Details sidebar (address, hours, `Medi-Cal, PPO insurance, and cash payments`, directions), and responsive Google Map + `"Get directions"` section.
 5. **Not Found (`*`)** — Branded 404 fallback page (`Page Not Found`) with clean links back home or to services/contact.
 
 ---
@@ -28,7 +28,7 @@ We have completed the local React + Vite + TypeScript reconstruction of **Magic 
 - Self-hosted local `Raleway v37` WOFF2 font subsets (`public/assets/fonts/`) with zero third-party font dependency.
 - Accessible, streamlined navigation: clean sticky Header (`Home`, `About Us`, `Our Services`, `Contact`, mobile drawer dialog), dark high-contrast Footer, and `localStorage`-persisted Cookie Consent banner. Removed top black strip and duplicate header/CTA buttons per mentor feedback (see [ui-refinement-log.md](./ui-refinement-log.md)).
 - All `51/51` source assets cataloged and stored locally in `public/assets/`, with `33` permission-review images (`28` GoDaddy-bundled Getty + `5` Picsart slides) plus `docs/source-reference/` and `docs/qa-evidence/` protected from Git commits/pushes via `.gitignore`.
-- Clean production build (`npm run build`: `0` TypeScript errors, `62.47 kB` CSS / `381.82 kB` JS uncompressed).
+- Clean production build (`npm run build`: `0` TypeScript errors, `63.71 kB` CSS / `382.12 kB` JS uncompressed).
 
 ---
 
@@ -50,7 +50,7 @@ No business facts, dentist names, testimonials, certifications, or clinic email 
 ## 6. Testing Summary
 
 - **Dev & Production Preview Verified:** Tested all routes (`/`, `/our-services`, `/about-us`, `/contact`, and `*`) across **9 viewports** (`1280×800`, `1366×768`, `1440×900`, `1600×900`, `1920×1080`, `820×1180`, `768×1024`, `390×844`, `360×780`) in headless Google Chrome with `0` console errors, `0` runtime exceptions, `0` horizontal overflow, and `0` broken images.
-- **Visual Screenshots:** Refined screenshots in `docs/qa-evidence/refined/` and detailed verification tables in [qa-report.md](./qa-report.md) & [ui-refinement-log.md](./ui-refinement-log.md) (git-ignored screenshots).
+- **Visual Screenshots:** Full-width hero captures in `docs/qa-evidence/full-width-heroes/`, prior refined captures in `docs/qa-evidence/refined/`, and detailed verification tables in [hero-refinement-report.md](./hero-refinement-report.md), [qa-report.md](./qa-report.md), and [ui-refinement-log.md](./ui-refinement-log.md) (git-ignored screenshots).
 
 ---
 
