@@ -2,6 +2,8 @@ import { useState, type FormEvent } from 'react';
 import { SERVICES_CONTACT_SECTION } from '../../data/services';
 import { Button } from '../common/Button';
 
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 export function ServiceNoteForm() {
   const [isOpen, setIsOpen] = useState(false);
   const [name, setName] = useState('');
@@ -22,7 +24,7 @@ export function ServiceNoteForm() {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const trimmedEmail = email.trim();
-    if (!trimmedEmail || !trimmedEmail.includes('@')) {
+    if (!EMAIL_PATTERN.test(trimmedEmail)) {
       setNotice({
         tone: 'error',
         text: 'Please enter a valid email address before submitting.',
@@ -82,8 +84,14 @@ export function ServiceNoteForm() {
                 id="services-note-email"
                 type="email"
                 required
+                aria-required="true"
+                aria-invalid={notice?.tone === 'error' ? 'true' : 'false'}
+                aria-describedby={notice ? 'services-note-notice' : undefined}
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  if (notice?.tone === 'error') setNotice(null);
+                }}
                 autoComplete="email"
               />
             </div>
@@ -101,6 +109,7 @@ export function ServiceNoteForm() {
 
           {notice && (
             <p
+              id="services-note-notice"
               role={notice.tone === 'error' ? 'alert' : 'status'}
               className={`services-note__notice services-note__notice--${notice.tone}`}
             >
@@ -110,11 +119,11 @@ export function ServiceNoteForm() {
 
           <p className="services-note__legal">
             This site is protected by reCAPTCHA and the Google{' '}
-            <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
               Privacy Policy
             </a>{' '}
             and{' '}
-            <a href="https://policies.google.com/terms" target="_blank" rel="noreferrer">
+            <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">
               Terms of Service
             </a>{' '}
             apply.

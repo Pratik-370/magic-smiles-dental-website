@@ -1,7 +1,7 @@
 # Mentor Review Brief — Magic Smiles Dental & Orthodontics Website Recreation
 
-**Prepared:** 2026-11-27 (Updated post-Full-Width Hero Refinement)  
-**Repository:** `Pratik-370/magic-smiles-dental-website` (Local branch `main`, held locally pending review)  
+**Prepared:** 2026-11-27 (Updated post-Final Website Polish)  
+**Repository:** `Pratik-370/magic-smiles-dental-website` (Branch `main`; note: GitHub remote currently reports `visibility: PUBLIC` / `isPrivate: false` as of `2026-11-26T08:15:12Z`)  
 **Tech Stack:** React 19, TypeScript 7, Vite 8, React Router 7, Standard CSS with design tokens  
 
 ---
@@ -28,7 +28,7 @@ We have completed the local React + Vite + TypeScript reconstruction of **Magic 
 - Self-hosted local `Raleway v37` WOFF2 font subsets (`public/assets/fonts/`) with zero third-party font dependency.
 - Accessible, streamlined navigation: clean sticky Header (`Home`, `About Us`, `Our Services`, `Contact`, mobile drawer dialog), dark high-contrast Footer, and `localStorage`-persisted Cookie Consent banner. Removed top black strip and duplicate header/CTA buttons per mentor feedback (see [ui-refinement-log.md](./ui-refinement-log.md)).
 - All `51/51` source assets cataloged and stored locally in `public/assets/`, with `33` permission-review images (`28` GoDaddy-bundled Getty + `5` Picsart slides) plus `docs/source-reference/` and `docs/qa-evidence/` protected from Git commits/pushes via `.gitignore`.
-- Clean production build (`npm run build`: `0` TypeScript errors, `63.71 kB` CSS / `382.12 kB` JS uncompressed).
+- Clean production build (`npm run build`: `0` TypeScript errors, `67.70 kB` CSS / `382.44 kB` JS uncompressed).
 
 ---
 
@@ -50,7 +50,7 @@ No business facts, dentist names, testimonials, certifications, or clinic email 
 ## 6. Testing Summary
 
 - **Dev & Production Preview Verified:** Tested all routes (`/`, `/our-services`, `/about-us`, `/contact`, and `*`) across **9 viewports** (`1280×800`, `1366×768`, `1440×900`, `1600×900`, `1920×1080`, `820×1180`, `768×1024`, `390×844`, `360×780`) in headless Google Chrome with `0` console errors, `0` runtime exceptions, `0` horizontal overflow, and `0` broken images.
-- **Visual Screenshots:** Full-width hero captures in `docs/qa-evidence/full-width-heroes/`, prior refined captures in `docs/qa-evidence/refined/`, and detailed verification tables in [hero-refinement-report.md](./hero-refinement-report.md), [qa-report.md](./qa-report.md), and [ui-refinement-log.md](./ui-refinement-log.md) (git-ignored screenshots).
+- **Visual Screenshots:** Final polish captures in `docs/qa-evidence/final-polish/`, hero captures in `docs/qa-evidence/full-width-heroes/`, prior refined captures in `docs/qa-evidence/refined/`, and detailed verification tables in [final-polish-report.md](./final-polish-report.md), [hero-refinement-report.md](./hero-refinement-report.md), [qa-report.md](./qa-report.md), and [ui-refinement-log.md](./ui-refinement-log.md) (git-ignored screenshots).
 
 ---
 

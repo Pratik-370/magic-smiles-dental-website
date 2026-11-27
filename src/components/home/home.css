@@ -42,12 +42,12 @@
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  font-size: var(--text-xs);
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-size: var(--text-eyebrow);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
   color: var(--color-primary);
-  padding: 0.45rem 0.9rem;
+  padding: 0.42rem 0.9rem;
   border-radius: var(--radius-pill);
   background: var(--color-primary-soft);
   border: 1px solid var(--color-primary-tint);
@@ -64,20 +64,20 @@
 .home-hero__title {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: clamp(2.25rem, 4.3vw, 3.8rem);
-  font-weight: 700;
-  line-height: 1.06;
-  letter-spacing: -0.02em;
+  font-size: var(--text-display);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
   color: var(--color-text);
-  max-width: 16ch;
+  max-width: 17ch;
 }
 
 .home-hero__subtitle {
   margin: 0;
-  font-size: clamp(1rem, 1.35vw, 1.15rem);
-  line-height: 1.68;
+  font-size: var(--text-lead);
+  line-height: 1.62;
   color: var(--color-text-muted);
-  max-width: 48ch;
+  max-width: 46ch;
 }
 
 .home-hero__actions {
@@ -158,18 +158,19 @@
 }
 
 .home-hero__fact-label {
-  font-size: var(--text-xs);
-  font-weight: 700;
+  font-size: var(--text-eyebrow);
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: var(--tracking-eyebrow);
   color: var(--color-primary);
 }
 
 .home-hero__fact-value {
   font-size: var(--text-sm);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
+  font-variant-numeric: tabular-nums;
   color: var(--color-text);
-  line-height: 1.45;
+  line-height: 1.48;
   text-decoration: none;
 }
 
@@ -251,9 +252,10 @@ a.home-hero__fact-value:hover {
 }
 
 .about-preview-card__eyebrow {
-  font-size: var(--text-xs);
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-family: var(--font-body);
+  font-size: var(--text-eyebrow);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
   color: var(--color-primary);
 }
@@ -261,23 +263,26 @@ a.home-hero__fact-value:hover {
 .about-preview-card__title {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: clamp(1.45rem, 2.3vw, 1.95rem);
-  line-height: 1.2;
+  font-size: var(--text-h2);
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
   color: var(--color-text);
 }
 
 .about-preview-card__subheading {
   margin: 0;
-  font-size: var(--text-base);
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: var(--text-lead);
+  font-weight: var(--font-weight-bold);
   color: var(--color-primary-strong);
 }
 
 .about-preview-card__copy {
   margin: 0;
-  font-size: var(--text-sm);
-  line-height: 1.72;
+  font-size: var(--text-card);
+  line-height: 1.68;
   color: var(--color-text-muted);
+  max-width: var(--text-measure);
 }
 
 .why-choose-panel {
@@ -289,8 +294,9 @@ a.home-hero__fact-value:hover {
 .why-choose-panel__heading {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: clamp(1.55rem, 2.6vw, 2.15rem);
-  line-height: 1.18;
+  font-size: var(--text-h2);
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
   color: var(--color-text);
 }
 
@@ -329,15 +335,17 @@ a.home-hero__fact-value:hover {
   background: var(--color-primary-soft);
   color: var(--color-primary-strong);
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
 }
 
 .why-choose-text {
   margin: 0;
-  font-size: var(--text-sm);
+  font-size: var(--text-card);
   line-height: 1.68;
   color: var(--color-text-muted);
+  max-width: var(--text-measure);
 }
 
 .why-choose-text strong {
@@ -422,14 +430,19 @@ a.home-hero__fact-value:hover {
   padding: clamp(1.35rem, 2.8vw, 2.1rem);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   gap: var(--space-3);
+}
+
+.service-preview-card--lead .service-preview__body {
+  justify-content: center;
 }
 
 .service-preview__index {
   font-family: var(--font-heading);
   font-size: var(--text-xs);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
+  font-variant-numeric: tabular-nums;
   letter-spacing: 0.14em;
   color: var(--color-primary);
 }
@@ -437,16 +450,18 @@ a.home-hero__fact-value:hover {
 .service-preview__title {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: clamp(1.25rem, 1.8vw, 1.6rem);
-  line-height: 1.24;
+  font-size: var(--text-h3);
+  line-height: var(--leading-h3);
+  letter-spacing: var(--tracking-heading);
   color: var(--color-text);
 }
 
 .service-preview__excerpt {
   margin: 0;
-  font-size: var(--text-sm);
-  line-height: 1.72;
+  font-size: var(--text-card);
+  line-height: 1.68;
   color: var(--color-text-muted);
+  max-width: 48ch;
 }
 
 .services-preview__footer-strip {
@@ -534,7 +549,8 @@ a.home-hero__fact-value:hover {
   min-width: 3.4rem;
   text-align: center;
   font-size: var(--text-xs);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
+  font-variant-numeric: tabular-nums;
   color: var(--color-text-muted);
 }
 
@@ -548,6 +564,7 @@ a.home-hero__fact-value:hover {
 .priority-mosaic__featured {
   display: flex;
   flex-direction: column;
+  margin: 0;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 22px;
@@ -559,6 +576,14 @@ a.home-hero__fact-value:hover {
   aspect-ratio: 4 / 3;
   overflow: hidden;
   background: var(--color-parchment);
+}
+
+@media (min-width: 901px) {
+  .priority-mosaic__stage {
+    flex: 1;
+    aspect-ratio: auto;
+    min-height: 360px;
+  }
 }
 
 .priority-mosaic__featured-img {
@@ -633,7 +658,7 @@ a.home-hero__fact-value:hover {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
   gap: clamp(1.75rem, 4vw, 3.5rem);
-  align-items: start;
+  align-items: center;
 }
 
 .fun-zone__sidebar {
@@ -642,11 +667,16 @@ a.home-hero__fact-value:hover {
   gap: var(--space-4);
 }
 
+.fun-zone__sidebar .section-heading {
+  margin-bottom: 0;
+}
+
 .fun-zone__caption {
   margin: 0;
-  font-size: var(--text-base);
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.86);
+  font-size: var(--text-lead);
+  line-height: 1.62;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 40ch;
 }
 
 .fun-zone__controls {
@@ -678,7 +708,8 @@ a.home-hero__fact-value:hover {
   min-width: 3.6rem;
   text-align: center;
   font-size: var(--text-xs);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
+  font-variant-numeric: tabular-nums;
   color: var(--color-accent);
 }
 
@@ -826,16 +857,18 @@ a.home-hero__fact-value:hover {
 .story-viewer__slide-title {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
-  line-height: 1.2;
+  font-size: var(--text-h3);
+  line-height: var(--leading-h3);
+  letter-spacing: var(--tracking-heading);
   color: var(--color-primary-strong);
 }
 
 .story-viewer__text {
   margin: 0;
-  font-size: var(--text-base);
-  line-height: 1.72;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
   color: var(--color-text-muted);
+  max-width: var(--text-measure);
 }
 
 .story-viewer__characters {
@@ -920,17 +953,18 @@ a.home-hero__fact-value:hover {
 .contact-cta-band__title {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
-  line-height: 1.14;
+  font-size: var(--text-h2);
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
   color: var(--color-text-inverse);
 }
 
 .contact-cta-band__copy {
   margin: 0;
-  font-size: var(--text-base);
+  font-size: var(--text-body);
   line-height: 1.68;
   color: rgba(255, 255, 255, 0.9);
-  max-width: 52ch;
+  max-width: 50ch;
 }
 
 .contact-cta-band__actions {
@@ -990,7 +1024,8 @@ a.home-hero__fact-value:hover {
 
 .contact-cta-band__phone {
   color: var(--color-accent);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
+  font-variant-numeric: tabular-nums;
   text-decoration: none;
 }
 

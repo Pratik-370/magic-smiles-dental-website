@@ -271,7 +271,7 @@ export function ServicesPage() {
       <section className="services-contact-section" aria-labelledby="services-contact-heading">
         <div className="site-container">
           <div className="services-contact-card">
-            <div>
+            <div className="services-contact-card__main">
               <span className="services-contact-card__eyebrow">
                 {SERVICES_CONTACT_SECTION.eyebrow}
               </span>
@@ -282,21 +282,21 @@ export function ServicesPage() {
                 {SERVICES_CONTACT_SECTION.description}
               </p>
 
-              <div className="services-contact-card__info">
-                <h3 className="services-contact-card__biz">
-                  {SERVICES_CONTACT_SECTION.businessName}
-                </h3>
-                <p className="services-contact-card__addr">{SERVICES_CONTACT_SECTION.address}</p>
-                <a
-                  className="services-contact-card__phone"
-                  href={SERVICES_CONTACT_SECTION.phoneHref}
-                >
-                  {SERVICES_CONTACT_SECTION.phoneDisplay}
-                </a>
-              </div>
+              <ServiceNoteForm />
             </div>
 
-            <ServiceNoteForm />
+            <aside className="services-contact-card__info" aria-label="Bakersfield service location details">
+              <h3 className="services-contact-card__biz">
+                {SERVICES_CONTACT_SECTION.businessName}
+              </h3>
+              <p className="services-contact-card__addr">{SERVICES_CONTACT_SECTION.address}</p>
+              <a
+                className="services-contact-card__phone"
+                href={SERVICES_CONTACT_SECTION.phoneHref}
+              >
+                {SERVICES_CONTACT_SECTION.phoneDisplay}
+              </a>
+            </aside>
           </div>
         </div>
       </section>

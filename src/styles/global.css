@@ -24,8 +24,8 @@ body {
   margin: 0;
   font-family: var(--font-body);
   font-weight: var(--font-weight-regular);
-  font-size: var(--text-base);
-  line-height: 1.6;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
   color: var(--color-text);
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
@@ -39,8 +39,13 @@ h5,
 h6 {
   font-family: var(--font-heading);
   font-weight: var(--font-weight-bold);
-  line-height: 1.2;
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
   margin-top: 0;
+}
+
+dd {
+  margin: 0;
 }
 
 img,

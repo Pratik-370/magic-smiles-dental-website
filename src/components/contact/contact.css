@@ -45,32 +45,41 @@
   background: rgba(255, 255, 255, 0.09);
   border: 1px solid rgba(255, 255, 255, 0.18);
   color: var(--color-accent);
-  font-size: var(--text-xs);
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-size: var(--text-eyebrow);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
+}
+
+.contact-hero__eyebrow::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-accent);
 }
 
 .contact-hero__title {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: clamp(2.25rem, 4.3vw, 3.55rem);
-  line-height: 1.06;
-  letter-spacing: -0.02em;
+  font-size: var(--text-display);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
   color: var(--color-text-inverse);
 }
 
 .contact-hero__subheading {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+  font-size: var(--text-lead);
+  font-weight: var(--font-weight-bold);
   color: var(--color-accent);
 }
 
 .contact-hero__lead {
   margin: 0;
-  font-size: var(--text-base);
-  line-height: 1.72;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
   color: rgba(255, 255, 255, 0.9);
   max-width: 54ch;
 }
@@ -104,7 +113,8 @@
 .contact-hero__phone-big {
   font-family: var(--font-heading);
   font-size: clamp(1.75rem, 2.8vw, 2.35rem);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
+  font-variant-numeric: tabular-nums;
   color: var(--color-accent);
   text-decoration: none;
   line-height: 1.1;
@@ -307,7 +317,8 @@
 
 .contact-info-card__phone {
   font-size: var(--text-base);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
+  font-variant-numeric: tabular-nums;
   color: var(--color-primary);
   text-decoration: none;
 }
@@ -355,13 +366,15 @@
 .contact-map-header__title {
   margin: 0 0 0.35rem;
   font-family: var(--font-heading);
-  font-size: clamp(1.5rem, 2.5vw, 2.05rem);
+  font-size: var(--text-h2);
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
   color: var(--color-text);
 }
 
 .contact-map-header__addr {
   margin: 0;
-  font-size: var(--text-base);
+  font-size: var(--text-body);
   color: var(--color-text-muted);
 }
 
@@ -375,7 +388,7 @@
 
 .contact-map-stage {
   position: relative;
-  height: clamp(300px, 42vw, 440px);
+  height: clamp(270px, 34vw, 400px);
   background: var(--color-bg-subtle);
 }
 
